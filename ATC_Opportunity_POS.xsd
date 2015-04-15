@@ -124,9 +124,9 @@
             <xsd:element name="VisualAssesCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
             <xsd:element name="SecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
             <xsd:element name="AnswerSecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Address" type="AddressWeb" />
             <xsd:element name="Asset" maxOccurs="unbounded" minOccurs="0" type="Asset"/>
-            <xsd:element name="Phone" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:Phone"/>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Address" type="AddressWeb"/>
+            <xsd:element name="Phone" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:Phone"/>
             <xsd:element minOccurs="0" maxOccurs="unbounded" name="ContactEmployment"
                 type="ContactEmploymentWeb"/>
             <xsd:element minOccurs="1" maxOccurs="unbounded" name="ContactCredential"
