@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://siebel.com/CustomUI" xmlns:tns="http://siebel.com/CustomUI" xmlns:xsdLocal1="http://www.siebel.com/xml/ATC%20Opportunity%20POS" xmlns:xsdLocal2="http://www.siebel.com/xml/ATC%20Broker%20Application%20PF">
+  <xsd:import namespace="http://www.siebel.com/xml/ATC%20Broker%20Application%20PF" schemaLocation="ATC_Broker_Application_PF.xsd"/>
+  <xsd:import namespace="http://www.siebel.com/xml/ATC%20Opportunity%20POS" schemaLocation="ATC_Opportunity_POS.xsd"/>
+  <xsd:include schemaLocation="CustomUI.xsd"/>
+
+<!-- BEGIN Global group petaining to all wsdl:message definitions -->
+<!-- END Global group -->
+
+
+<!-- BEGIN Message Definitions for the wsdl:operations  -->
+<!-- END Message Definitions -->
+
+
+</xsd:schema>

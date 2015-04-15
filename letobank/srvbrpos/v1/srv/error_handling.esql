@@ -1,0 +1,13 @@
+BROKER SCHEMA letobank.srvbrpos.v1.srv
+
+
+CREATE COMPUTE MODULE error_handling
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		CALL letobank.common.utils.senders.createErrorMesg(InputRoot, OutputRoot, 'request', 'WSTechnicalException', Environment.usr.errorCode, Environment.usr.errMesg);
+		SET OutputLocalEnvironment = InputLocalEnvironment;
+		RETURN TRUE;
+	END;
+	
+
+END MODULE;

@@ -13,6 +13,16 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+/.metadata/
+# Windows shortcuts
+*.lnk
+*.bar
+*.log
+*.mbtest
+*.prefs
+/IBMdefined/
+/log/
+*.project
 
 # Windows shortcuts
 *.lnk

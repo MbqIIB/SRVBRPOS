@@ -1,0 +1,20 @@
+BROKER SCHEMA letobank.srvbrpos.v1.adp
+
+
+CREATE DATABASE MODULE checkSiebelErrorMsg
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE cus NAMESPACE 'http://siebel.com/CustomUI';
+		DECLARE operRef REFERENCE TO Root.XMLNSC;
+		MOVE operRef LASTCHILD;
+		DECLARE oper CHARACTER FIELDNAME(operRef);
+		DECLARE erCode CHARACTER Root.XMLNSC.cus:{oper}.cus:ErrorCode;
+		DECLARE erMesg CHARACTER Root.XMLNSC.cus:{oper}.cus:ErrorMessage;
+		IF COALESCE (erCode,'') <> '' OR COALESCE(erMesg,'')<>''  THEN
+				SET Environment.usr.errorCode = siebelExceptionCode;
+--				THROW USER EXCEPTION VALUES('90001', 'Find error to Siebel in ErrorCode or ErrorMessage');
+		END IF;
+		RETURN TRUE;
+	END;
+
+END MODULE;

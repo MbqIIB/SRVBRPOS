@@ -1,0 +1,59 @@
+BROKER SCHEMA letobank.common.utils.senders
+
+-- перенес в логи для проверки exceptionList 
+--CREATE FUNCTION CheckExceptionName(IN inExList REFERENCE) RETURNS CHARACTER
+--begin
+--	DECLARE exListName CHARACTER '';
+--	DECLARE lstException REFERENCE TO inExList.*[1];
+--	WHILE LASTMOVE(lstException) DO
+--		IF EXISTS(lstException.*[]) AND NOT(FIELDNAME(lstException) = 'Insert') THEN
+--			SET exListName = FIELDNAME(lstException);
+--		END IF;
+--		MOVE lstException LASTCHILD;
+--	END WHILE;
+--	return exListName;
+--end;	
+
+CREATE PROCEDURE createErrorMesg(IN inMesg REFERENCE, IN outMesg REFERENCE, IN typeMetod CHARACTER, IN detailExcpName CHARACTER, IN errorCode INT, IN errMesg CHARACTER)
+BEGIN
+	DECLARE soapenv NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+	DECLARE wsc NAMESPACE 'http://WSCommonTypes.esb.ws.letobank.ru';
+	DECLARE ws NAMESPACE 'http://WSBroker_POS.esb.ws.letobank.ru';
+	CREATE LASTCHILD OF outMesg DOMAIN ('XMLNSC');
+	IF typeMetod = 'request' THEN
+		SET outMesg.XMLNSC.soapenv:Fault.(XMLNSC.NamespaceDecl)xmlns:soapenv = soapenv;
+		SET outMesg.XMLNSC.soapenv:Fault.faultcode = errorCode;
+		SET outMesg.XMLNSC.soapenv:Fault.faultstring = errMesg;	
+		SET outMesg.XMLNSC.soapenv:Fault.detail.wsc:{detailExcpName}.(XMLNSC.NamespaceDecl)xmlns:wsc = wsc;
+		SET outMesg.XMLNSC.soapenv:Fault.detail.wsc:{detailExcpName}.errorCode = errorCode;
+		SET outMesg.XMLNSC.soapenv:Fault.detail.wsc:{detailExcpName}.errorString = errMesg;	
+	ELSE
+		DECLARE operRef REFERENCE TO inMesg.XMLNSC;
+		MOVE operRef LASTCHILD;
+		DECLARE oper CHARACTER FIELDNAME(operRef);
+		DECLARE msgName CHARACTER renameMessage(oper);
+		
+		SET outMesg.XMLNSC.ws:{msgName}.(XMLNSC.NamespaceDecl)xmlns:ws = ws;
+		CREATE LASTCHILD OF outMesg.XMLNSC.ws:{msgName} NAME 'esbMsg';
+		DECLARE msgRef REFERENCE TO outMesg.XMLNSC.ws:{msgName}.esbMsg;
+		DECLARE inMesgValue REFERENCE TO inMesg.XMLNSC.ws:{oper}.esbMsg.esbHeader;
+		SET msgRef.esbHeader = inMesgValue;
+		SET msgRef.esbHeader.ErrCode = errorCode;
+		SET msgRef.esbHeader.ErrMess = errMesg; 
+		
+		CALL addBody(msgRef, inMesg);
+	END IF;
+END;
+
+CREATE PROCEDURE addBody (IN msgRef REFERENCE, IN inMesg REFERENCE)
+BEGIN
+ -- Body
+	CREATE LASTCHILD OF msgRef.esbBody NAME 'ErrorCode';
+	CREATE LASTCHILD OF msgRef.esbBody NAME 'ErrorMessage';
+	CREATE LASTCHILD OF msgRef.esbBody NAME 'InteractionId';
+END;
+
+CREATE FUNCTION renameMessage(IN inMesg REFERENCE) RETURNS CHARACTER
+BEGIN
+	RETURN  REPLACE(inMesg, 'Request', 'Response');
+END;

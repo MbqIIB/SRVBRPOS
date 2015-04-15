@@ -1,0 +1,32 @@
+BROKER SCHEMA letobank.srvbrpos.v1.adp
+
+CREATE COMPUTE MODULE error_handling_adapter
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		IF EXISTS(Environment.usr.faultMessage[]) THEN
+			SET OutputRoot.XMLNSC = Environment.usr.faultMessage.Body;
+		ELSE
+			DECLARE errorMesg CHARACTER;
+			DECLARE errorCode INTEGER;
+			
+			DECLARE typeMetod CHARACTER InputRoot.MQFRH2.usr.typeMetod;
+			IF (typeMetod = 'docsSignedRequest') OR (typeMetod = 'offerCancelledRequest') THEN
+				SET errorMesg = 'Запрос принят и будет обработан в ближайшее время.';
+			ELSE
+				SET errorMesg = 'Сервис недоступен, повторите попытку позднее';
+			END IF;
+			if Environment.usr.originalExceptionName = 'ParserException' then
+				SET  Environment.usr.errorCode = parseExceptionCode;
+			end if;	
+			IF EXISTS(Environment.usr.errorCode[]) THEN
+				SET errorCode = Environment.usr.errorCode;
+			ELSE
+				SET errorCode = InputRoot.MQRFH2.usr.errorCode;
+			END IF;
+				CALL letobank.common.utils.senders.createErrorMesg(InputRoot, OutputRoot, InputRoot.MQRFH2.usr.typeMetod, 'WSTechnicalException', errorCode, errorMesg);
+			END IF;
+		SET OutputLocalEnvironment = InputLocalEnvironment;	
+		SET OutputLocalEnvironment.Destination.RouterList.DestinationData[1].labelname = 'SendToMQ';
+		RETURN TRUE;
+	END;
+END MODULE;

@@ -1,0 +1,12 @@
+BROKER SCHEMA letobank.srvbrpos.v1.adp
+
+DECLARE code EXTERNAL INT 0;
+
+CREATE DATABASE MODULE WriteErrorToEnvironment
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET Environment.usr.errorCode = code;
+		RETURN TRUE;
+	END;
+
+END MODULE;

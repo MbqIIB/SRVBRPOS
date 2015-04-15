@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmMQInput.msgnode="ComIbmMQInput.msgnode" xmlns:ComIbmSOAPReply.msgnode="ComIbmSOAPReply.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:letobank_srvbrpos_v1_srv_restoreReplyIdent.subflow="letobank/srvbrpos/v1/srv/restoreReplyIdent.subflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="letobank/srvbrpos/v1/srv/letobank_srvbrpos_v1_srv_rshl.msgflow"
+    nsPrefix="letobank_srvbrpos_v1_srv_letobank_srvbrpos_v1_srv_rshl.msgflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.queueName" name="queueName" lowerBound="1" defaultValueLiteral="LETOBANK.ADP.ADPSBL.V1.BRPOS.RESP">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <translation xmi:type="utility:TranslatableString" key="letobank_srvbrpos_v1_srv_rshl" bundleName="letobank/srvbrpos/v1/srv/letobank_srvbrpos_v1_srv_rshl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Letobank.SRVBRPOS.V1.App/icons/full/obj16/letobank_srvbrpos_v1_srv_rshl.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Letobank.SRVBRPOS.V1.App/icons/full/obj30/letobank_srvbrpos_v1_srv_rshl.gif"/>
+    <composition>
+      <nodes xmi:type="ComIbmMQInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="27,62" queueName="LETOBANK.ADP.ADPSBL.V1.BRCASH.RESP" messageDomainProperty="XMLNSC">
+        <translation xmi:type="utility:ConstantString" string="MQ Input"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="278,62">
+        <translation xmi:type="utility:ConstantString" string="SOAP Reply"/>
+      </nodes>
+      <nodes xmi:type="letobank_srvbrpos_v1_srv_restoreReplyIdent.subflow:FCMComposite_1" xmi:id="FCMComposite_1_2" location="128,62">
+        <translation xmi:type="utility:ConstantString" string="restoreReplyIdent"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="Group.BasicSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.queueName">
+        <propertyName xmi:type="utility:TranslatableString" key="Property.queueName" bundleName="ComIbmMQInput" pluginId="com.ibm.etools.mft.ibmnodes"/>
+      </propertyDescriptor>
+    </propertyOrganizer>
+    <attributeLinks promotedAttribute="Property.queueName" overriddenNodes="FCMComposite_1_1">
+      <overriddenAttribute href="ComIbmMQInput.msgnode#Property.queueName"/>
+    </attributeLinks>
+    <stickyBoard/>
+  </eClassifiers>
+</ecore:EPackage>

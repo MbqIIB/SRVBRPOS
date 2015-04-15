@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmCompute.msgnode="ComIbmCompute.msgnode" xmlns:ComIbmThrow.msgnode="ComIbmThrow.msgnode" xmlns:ComIbmTryCatch.msgnode="ComIbmTryCatch.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:letobank_common_utils_logging_AddLog.subflow="letobank/common/utils/logging/AddLog.subflow" xmlns:letobank_common_utils_senders_CheckSendingConfiguration.subflow="letobank/common/utils/senders/CheckSendingConfiguration.subflow"
+    xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="letobank/common/utils/senders/SenderRetryPrepareLoc.subflow"
+    nsPrefix="letobank_common_utils_senders_SenderRetryPrepareLoc.subflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1" useDefaults="true" udpSupport="true">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.dataSource" name="dataSource" defaultValueLiteral="Parameter not defined in subflow.">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.dbSource" name="dbSource" lowerBound="1" defaultValueLiteral="Parameter not defined in subflow.">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.DEFAULT_DELAY" name="DEFAULT_DELAY" lowerBound="1" defaultValueLiteral="0">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.DEFAULT_RETRY" name="DEFAULT_RETRY" lowerBound="1" defaultValueLiteral="0">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.srvName" name="srvName" lowerBound="1" defaultValueLiteral="Parameter not defined in subflow.">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.tableConfigsName" name="tableConfigsName" lowerBound="1" defaultValueLiteral="Parameter not defined in subflow.">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.moduleName" name="moduleName" lowerBound="1" defaultValueLiteral="BRPOS">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.errorCode" name="errorCode" lowerBound="1">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.errMesg" name="errMesg" lowerBound="1">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <translation xmi:type="utility:TranslatableString" key="SenderRetryPrepareLoc" bundleName="letobank/common/utils/senders/SenderRetryPrepareLoc" pluginId="Letobank.SRVBRPOS.V1.App"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Letobank.SRVBRPOS.V1.App/icons/full/obj16/SenderRetryPrepareLoc.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Letobank.SRVBRPOS.V1.App/icons/full/obj30/SenderRetryPrepareLoc.gif"/>
+    <composition>
+      <nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input" location="10,20">
+        <translation xmi:type="utility:TranslatableString" key="InTerminal.Input" bundleName="letobank/common/utils/senders/SenderRetryPrepareLoc" pluginId="Letobank.SRVBRPOS.V1.App"/>
+      </nodes>
+      <nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output" location="590,101">
+        <translation xmi:type="utility:TranslatableString" key="OutTerminal.Output" bundleName="letobank/common/utils/senders/SenderRetryPrepareLoc" pluginId="Letobank.SRVBRPOS.V1.App"/>
+      </nodes>
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="377,101" computeExpression="esql://routine/letobank.common.utils.senders#SenderRetryPrepare.Main" computeMode="all">
+        <translation xmi:type="utility:ConstantString" string="Sender (Propagate/Check/Delay)"/>
+      </nodes>
+      <nodes xmi:type="ComIbmTryCatch.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="283,20">
+        <translation xmi:type="utility:ConstantString" string="Try Catch"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_senders_CheckSendingConfiguration.subflow:FCMComposite_1" xmi:id="FCMComposite_1_5" location="91,20">
+        <translation xmi:type="utility:ConstantString" string="CheckSendingConfiguration"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_6" location="534,17" logLevel="1" logMessage="ESB processing error. Attempts exhausted">
+        <translation xmi:type="utility:ConstantString" string="ErrorLog: Attempts exhausted"/>
+      </nodes>
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="427,16" computeExpression="esql://routine/letobank.common.utils.senders#AddError_Compute.Main" computeMode="all">
+        <translation xmi:type="utility:ConstantString" string="AddErrorCode"/>
+      </nodes>
+      <nodes xmi:type="ComIbmThrow.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="734,17" messageText="Attempts are settled. there was an exceptional situation">
+        <translation xmi:type="utility:ConstantString" string="Throw"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_1" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.try" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="OutTerminal.Output" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_6" targetNode="FCMComposite_1_5" sourceNode="InTerminal.Input" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_7" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.catch" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_6" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_5" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_6" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="Group.SendingSettings" configurable="true" describedAttribute="Property.dataSource">
+        <propertyName xmi:type="utility:TranslatableString" key="Property.dataSource" bundleName="ComIbmDatabase" pluginId="com.ibm.etools.mft.ibmnodes"/>
+        <propertyDescriptor groupName="Group.SendingSettings" configurable="true" userDefined="true" describedAttribute="Property.dbSource">
+          <propertyName xmi:type="utility:TranslatableString" key="Property.dbSource" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+          <propertyDescriptor groupName="Group.SendingSettings" configurable="true" userDefined="true" describedAttribute="Property.DEFAULT_DELAY">
+            <propertyName xmi:type="utility:TranslatableString" key="Property.DEFAULT_DELAY" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+            <propertyDescriptor groupName="Group.SendingSettings" configurable="true" userDefined="true" describedAttribute="Property.DEFAULT_RETRY">
+              <propertyName xmi:type="utility:TranslatableString" key="Property.DEFAULT_RETRY" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+              <propertyDescriptor groupName="Group.SendingSettings" configurable="true" userDefined="true" describedAttribute="Property.srvName">
+                <propertyName xmi:type="utility:TranslatableString" key="Property.srvName" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                <propertyDescriptor groupName="Group.SendingSettings" configurable="true" userDefined="true" describedAttribute="Property.tableConfigsName">
+                  <propertyName xmi:type="utility:TranslatableString" key="Property.tableConfigsName" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                  <propertyDescriptor groupName="Group.LogSettings" configurable="true" userDefined="true" describedAttribute="Property.moduleName">
+                    <propertyName xmi:type="utility:TranslatableString" key="Property.moduleName" bundleName="letobank/common/utils/logging/AddLog" pluginId="Letobank.COMMON.V2.Lib"/>
+                    <propertyDescriptor groupName="Group.ErrorSettings" configurable="true" userDefined="true" describedAttribute="Property.errorCode">
+                      <propertyName xmi:type="utility:TranslatableString" key="Property.errorCode" bundleName="letobank/common/utils/senders/SenderRetryPrepareLoc" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                      <propertyDescriptor groupName="Group.ErrorSettings" configurable="true" userDefined="true" describedAttribute="Property.errMesg">
+                        <propertyName xmi:type="utility:TranslatableString" key="Property.errMesg" bundleName="letobank/common/utils/senders/SenderRetryPrepareLoc" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                      </propertyDescriptor>
+                    </propertyDescriptor>
+                  </propertyDescriptor>
+                </propertyDescriptor>
+              </propertyDescriptor>
+            </propertyDescriptor>
+          </propertyDescriptor>
+        </propertyDescriptor>
+      </propertyDescriptor>
+    </propertyOrganizer>
+    <attributeLinks promotedAttribute="Property.dataSource" overriddenNodes="FCMComposite_1_5">
+      <overriddenAttribute href="letobank/common/utils/senders/CheckSendingConfiguration.subflow#Property.dataSource"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.dbSource" overriddenNodes="FCMComposite_1_5">
+      <overriddenAttribute href="letobank/common/utils/senders/CheckSendingConfiguration.subflow#Property.dbSource"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.DEFAULT_DELAY" overriddenNodes="FCMComposite_1_5">
+      <overriddenAttribute href="letobank/common/utils/senders/CheckSendingConfiguration.subflow#Property.DEFAULT_DELAY"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.DEFAULT_RETRY" overriddenNodes="FCMComposite_1_5">
+      <overriddenAttribute href="letobank/common/utils/senders/CheckSendingConfiguration.subflow#Property.DEFAULT_RETRY"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.srvName" overriddenNodes="FCMComposite_1_5">
+      <overriddenAttribute href="letobank/common/utils/senders/CheckSendingConfiguration.subflow#Property.srvName"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.tableConfigsName" overriddenNodes="FCMComposite_1_5">
+      <overriddenAttribute href="letobank/common/utils/senders/CheckSendingConfiguration.subflow#Property.tableConfigsName"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.moduleName" overriddenNodes="FCMComposite_1_5">
+      <overriddenAttribute href="letobank/common/utils/senders/CheckSendingConfiguration.subflow#Property.moduleName"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.moduleName" overriddenNodes="FCMComposite_1_6">
+      <overriddenAttribute href="letobank/common/utils/logging/AddLog.subflow#Property.moduleName"/>
+    </attributeLinks>
+    <stickyBoard/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,11 @@
+BROKER SCHEMA letobank.common.utils.senders
+
+
+CREATE DATABASE MODULE SenderWSRespFault
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN 
+		SET Environment.usr.faultMessage = Body;
+		RETURN TRUE;
+	END;
+
+END MODULE;
