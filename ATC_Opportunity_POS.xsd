@@ -65,24 +65,18 @@
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="1" name="Channel">
                 <xsd:annotation>
-                    <xsd:documentation>Канал поступления заявки</xsd:documentation>
+                    <xsd:documentation>Канал поступления заявки: Интернет Брокер</xsd:documentation>
                 </xsd:annotation>
                 <xsd:simpleType>
-                    <xsd:restriction base="xsd:string">
-                        <xsd:enumeration value="Интернет"/>
-                        <xsd:enumeration value="Брокер"/>
-                    </xsd:restriction>
+                    <xsd:restriction base="xsd:string"/>
                 </xsd:simpleType>
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="1" name="PathCode">
                 <xsd:annotation>
-                    <xsd:documentation>Код маршрута</xsd:documentation>
+                    <xsd:documentation>Код маршрута Пост-контроль Пред-контроль</xsd:documentation>
                 </xsd:annotation>
                 <xsd:simpleType>
-                    <xsd:restriction base="xsd:string">
-                        <xsd:enumeration value="Пост-контроль"/>
-                        <xsd:enumeration value="Пред-контроль"/>
-                    </xsd:restriction>
+                    <xsd:restriction base="xsd:string"/>
                 </xsd:simpleType>
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="1" name="TtCode" type="xsd:string">
@@ -118,12 +112,14 @@
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="0" name="AgentPassportSeria" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Серия паспорта сотрудника, оформляющего кредит</xsd:documentation>
+                    <xsd:documentation>Серия паспорта сотрудника, оформляющего
+                        кредит</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="0" name="AgentPassportNumber" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Номер паспорта сотрудника, оформляющего кредит</xsd:documentation>
+                    <xsd:documentation>Номер паспорта сотрудника, оформляющего
+                        кредит</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="0" name="AgentAgreeName" type="xsd:string">
@@ -221,8 +217,7 @@
             </xsd:element>
             <xsd:element name="MonthFamilyIncome" maxOccurs="1" minOccurs="1" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Ежемесячный доход семьи
-</xsd:documentation>
+                    <xsd:documentation>Ежемесячный доход семьи </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element name="MonthFamilyExpenses" maxOccurs="1" minOccurs="1" type="xsd:string">
@@ -230,60 +225,30 @@
                     <xsd:documentation>Ежемесячный расход семьи</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="MaritalStatus" maxOccurs="1" minOccurs="1">
+            <xsd:element name="MaritalStatus" maxOccurs="1" minOccurs="1" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Семейное положение</xsd:documentation>
+                    <xsd:documentation>Семейное положение Холост/Не замужем Разведен(на)
+                        Женат/Замужем Гражданский брак</xsd:documentation>
                 </xsd:annotation>
-                <xsd:simpleType>
-                    <xsd:restriction base="xsd:string">
-                        <xsd:enumeration value="Холост/Не замужем"/>
-                        <xsd:enumeration value="Разведен(на)"/>
-                        <xsd:enumeration value="Женат/Замужем"/>
-                        <xsd:enumeration value="Гражданский брак"/>
-                    </xsd:restriction>
-                </xsd:simpleType>
             </xsd:element>
-            <xsd:element name="NumberChild" maxOccurs="1" minOccurs="1">
+            <xsd:element name="NumberChild" maxOccurs="1" minOccurs="1" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Кол-во детей</xsd:documentation>
+                    <xsd:documentation>Кол-во детей: Нет Один Двое Трое Больше
+                        трех</xsd:documentation>
                 </xsd:annotation>
-                <xsd:simpleType>
-                    <xsd:restriction base="xsd:string">
-                        <xsd:enumeration value="Нет"/>
-                        <xsd:enumeration value="Один"/>
-                        <xsd:enumeration value="Двое"/>
-                        <xsd:enumeration value="Трое"/>
-                        <xsd:enumeration value="Больше трех"/>
-                    </xsd:restriction>
-                </xsd:simpleType>
             </xsd:element>
-            <xsd:element name="NumberDepend" maxOccurs="1" minOccurs="1">
+            <xsd:element name="NumberDepend" maxOccurs="1" minOccurs="1" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Кол-во иждивенцев</xsd:documentation>
+                    <xsd:documentation>Кол-во иждивенцев: Нет Один Двое Трое Больше
+                        трех</xsd:documentation>
                 </xsd:annotation>
-                <xsd:simpleType>
-                    <xsd:restriction base="xsd:string">
-                        <xsd:enumeration value="Нет"/>
-                        <xsd:enumeration value="Один"/>
-                        <xsd:enumeration value="Двое"/>
-                        <xsd:enumeration value="Трое"/>
-                        <xsd:enumeration value="Больше трех"/>
-                    </xsd:restriction>
-                </xsd:simpleType>
             </xsd:element>
             <xsd:element name="EmailAddress" maxOccurs="1" minOccurs="0" type="xsd:string"/>
-            <xsd:element name="AddressStatus" maxOccurs="1" minOccurs="1">
+            <xsd:element name="AddressStatus" maxOccurs="1" minOccurs="1" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Статус жилья</xsd:documentation>
+                    <xsd:documentation>Статус жилья Собственное Съемное жилье Проживаю у
+                        родств./знакомых Муниципальное, служебное</xsd:documentation>
                 </xsd:annotation>
-                <xsd:simpleType>
-                    <xsd:restriction base="xsd:string">
-                        <xsd:enumeration value="Собственное"/>
-                        <xsd:enumeration value="Съемное жилье"/>
-                        <xsd:enumeration value="Проживаю у родств./знакомых"/>
-                        <xsd:enumeration value="Муниципальное, служебное"/>
-                    </xsd:restriction>
-                </xsd:simpleType>
             </xsd:element>
             <xsd:element name="Education" maxOccurs="1" minOccurs="1">
                 <xsd:annotation>
@@ -298,9 +263,21 @@
                     </xsd:restriction>
                 </xsd:simpleType>
             </xsd:element>
-            <xsd:element name="LastName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="FirstName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="MiddleName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+            <xsd:element name="LastName" maxOccurs="1" minOccurs="1" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Фамилия</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="FirstName" maxOccurs="1" minOccurs="1" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Имя</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MiddleName" maxOccurs="1" minOccurs="0" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Отчетсво</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element name="BirthDate" maxOccurs="1" minOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation>Место рождения</xsd:documentation>
@@ -453,32 +430,145 @@
     </xsd:complexType>
     <xsd:complexType name="AddressWeb">
         <xsd:all>
-            <xsd:element maxOccurs="1" minOccurs="1" name="KladrFlag" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Zipcode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Country" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="PostAddressFlag" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="LivingAddressFlag" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="RegAddressFlag" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="WorkAddressFlag" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="RegionCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="District" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="DistrictType" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="City" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="CityType" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Subcity" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="SubcityType" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Street" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="StreetType" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="StreetKLADRCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="House" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="HouseKLADRCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Building" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Domain" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Housing" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Flat" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="KladrCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="RegDate" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="GniCode" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="KladrFlag" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Флаг принадлежности КЛАДР</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Zipcode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Индекс</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Country" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Страна</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="PostAddressFlag">
+                <xsd:annotation>
+                    <xsd:documentation>Флаг почтового адреса</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="0"/>
+                        <xsd:enumeration value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="LivingAddressFlag">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="0"/>
+                        <xsd:enumeration value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="RegAddressFlag" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Флаг адреса регистрации</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="WorkAddressFlag" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Флаг рабочего адреса</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="RegionCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код региона</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="District" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Район</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DistrictType" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Тип района</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="City" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Город</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CityType" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Тип города</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Subcity" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Населенный пункт</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="SubcityType" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Тип населенного пункта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Street" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Улица</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="StreetType" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Тип улицы</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="StreetKLADRCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код КЛАДР улицы</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="House" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер дома</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="HouseKLADRCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код КЛАДР диапазона домов</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Building" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Строение</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Domain" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Владение</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Housing" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Корпус</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Flat" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Квартира</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="KladrCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>код КЛАДР</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="RegDate" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Дата регистрации</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="GniCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код ГНИ</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
         </xsd:all>
     </xsd:complexType>
     <xsd:complexType name="Address">
@@ -536,21 +626,17 @@
     </xsd:complexType>
     <xsd:complexType name="Phone">
         <xsd:all>
-            <xsd:element maxOccurs="1" minOccurs="1" name="UseType">
+            <xsd:element maxOccurs="1" minOccurs="1" name="UseType" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Тип телефона</xsd:documentation>
+                    <xsd:documentation>Тип телефона
+Мобильный
+Домашний
+Контактный
+Рекомендуемый
+Телефон регистрации
+Рабочий
+Мобильный 2</xsd:documentation>
                 </xsd:annotation>
-                <xsd:simpleType>
-                    <xsd:restriction base="xsd:string">
-                        <xsd:enumeration value="Мобильный"/>
-                        <xsd:enumeration value="Домашний"/>
-                        <xsd:enumeration value="Контактный"/>
-                        <xsd:enumeration value="Рекомендуемый"/>
-                        <xsd:enumeration value="Телефон регистрации"/>
-                        <xsd:enumeration value="Рабочий"/>
-                        <xsd:enumeration value="Мобильный 2"/>
-                    </xsd:restriction>
-                </xsd:simpleType>
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="1" name="PhoneNumber">
                 <xsd:annotation>
@@ -730,11 +816,8 @@
         <xsd:all>
             <xsd:element maxOccurs="1" minOccurs="0" name="EmployeeNumber" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Кол-во сотрудников в орг-и
-До 10 человек
-От 10 до 100 человек
-От 100 до 1000 человек
-Свыше 1000 человек</xsd:documentation>
+                    <xsd:documentation>Кол-во сотрудников в орг-и До 10 человек От 10 до 100 человек
+                        От 100 до 1000 человек Свыше 1000 человек</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="1" name="Employer" type="xsd:string">
@@ -749,36 +832,26 @@
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="0" name="Industry" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Индустрия
-A	Сельское и лесное хозяйство, охота
-B	Рыбное хозяйство, добыча водных биоресурсов
-C	Добыча полезных ископаемых
-D	Тяжелая, легкая, пищевая пром., химия, парфюмерия, фармацевтика
-E	Производство и распределение электроэнергии, газа и воды
-F	Строительство, производство стройматериалов, дорожные службы
-G	Торговля, ремонт и бытовое обслуживание
-H	Туристический и гостиничный бизнес, общепит и рестораны
-I	Транспорт, логистика, связь, информ.технологии, телекоммуникации
-J	Финансы, банковское дело, страхование, аудит, консалтинг
-K	Операции с недвижимым имуществом, аренда и предоставление услуг
-L	Федеральное, муниципальное управление, армия, силовики, таможня
-M	Наука и образование
-N	Здравоохранение и социальная помощь
-O	ЖКХ, СМИ,реклама,культура,охрана, услуги для юр.и физ.лиц, спорт
-P	Экстерриториальные организаций
-Z	Прочее
-</xsd:documentation>
+                    <xsd:documentation>Индустрия A Сельское и лесное хозяйство, охота B Рыбное
+                        хозяйство, добыча водных биоресурсов C Добыча полезных ископаемых D Тяжелая,
+                        легкая, пищевая пром., химия, парфюмерия, фармацевтика E Производство и
+                        распределение электроэнергии, газа и воды F Строительство, производство
+                        стройматериалов, дорожные службы G Торговля, ремонт и бытовое обслуживание H
+                        Туристический и гостиничный бизнес, общепит и рестораны I Транспорт,
+                        логистика, связь, информ.технологии, телекоммуникации J Финансы, банковское
+                        дело, страхование, аудит, консалтинг K Операции с недвижимым имуществом,
+                        аренда и предоставление услуг L Федеральное, муниципальное управление,
+                        армия, силовики, таможня M Наука и образование N Здравоохранение и
+                        социальная помощь O ЖКХ, СМИ,реклама,культура,охрана, услуги для юр.и
+                        физ.лиц, спорт P Экстерриториальные организаций Z Прочее
+                    </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="0" name="Position" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Должность
-Служащий\Специалист
-Административный персонал
-Военнослужащий по контракту
-Руководитель среднего звена
-Руководитель высшего звена
-</xsd:documentation>
+                    <xsd:documentation>Должность Служащий\Специалист Административный персонал
+                        Военнослужащий по контракту Руководитель среднего звена Руководитель высшего
+                        звена </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="1" name="StartDate">
