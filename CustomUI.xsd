@@ -10,23 +10,23 @@
     </xsd:element>
     <xsd:element ibmSchExtn:docRoot="true" name="checkScoreResult_Output">
         <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element name="CreditAmount" type="xsd:string"/>
-                <xsd:element name="CreditPercent" type="xsd:string"/>
-                <xsd:element name="CreditRate" type="xsd:string"/>
-                <xsd:element name="CreditSumm" type="xsd:string"/>
-                <xsd:element name="CreditTerm" type="xsd:string"/>
-                <xsd:element name="DecisionCode" type="xsd:string"/>
-                <xsd:element name="ErrorCode" type="xsd:string"/>
-                <xsd:element name="ErrorMessage" type="xsd:string"/>
-                <xsd:element name="InitPayment" type="xsd:string"/>
-                <xsd:element name="InsureMonthPayment" type="xsd:string"/>
-                <xsd:element name="InteractionId" type="xsd:string"/>
-                <xsd:element name="NoInsureMonthPayment" type="xsd:string"> </xsd:element>
-                <xsd:element name="TotalMonthPayment" type="xsd:string"/>
-                <xsd:element name="TotalInsuranceAmount" type="xsd:string"/>
-                <xsd:element name="ProductName" type="xsd:string"/>
-            </xsd:sequence>
+            <xsd:all>
+                <xsd:element name="CreditAmount" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="CreditPercent" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+                <xsd:element name="CreditRate" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+                <xsd:element name="CreditSumm" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+                <xsd:element name="CreditTerm" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+                <xsd:element name="DecisionCode" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+                <xsd:element name="ErrorCode" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+                <xsd:element name="ErrorMessage" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+                <xsd:element name="InitPayment" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+                <xsd:element name="InsureMonthPayment" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+                <xsd:element name="InteractionId" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+                <xsd:element name="NoInsureMonthPayment" type="xsd:string" maxOccurs="1" minOccurs="0"> </xsd:element>
+                <xsd:element name="TotalMonthPayment" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+                <xsd:element name="TotalInsuranceAmount" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+                <xsd:element name="ProductName" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+            </xsd:all>
         </xsd:complexType>
     </xsd:element>
     <xsd:element ibmSchExtn:docRoot="true" name="scoreOptyWeb_Input">

@@ -11,34 +11,146 @@
     </xsd:complexType>
     <xsd:complexType name="Application">
         <xsd:sequence>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Type" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ProductCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Product2Code" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="TermCredit" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AmountCredit" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AnnualPayment" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="FirstPayment" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="InsuranceForm" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Type" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Тип заявки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ProductCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код продукта</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Product2Code" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код продукта 2 уровня</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="TermCredit" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>срок кредита</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AmountCredit" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Сумма кредита</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AnnualPayment" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Ежемесячный платеж</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FirstPayment" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Первоначальный платеж</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="InsuranceForm" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Согласие на страховку</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="0" name="InsuranceType" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="CardType" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CardType" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Тип карты</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="0" name="PersonalElectronicSignature"
-                type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Channel" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="PathCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="TtCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ToCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="TtAddress" type="xsd:string"/>
+                type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>ПЭП</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Channel">
+                <xsd:annotation>
+                    <xsd:documentation>Канал поступления заявки</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Интернет"/>
+                        <xsd:enumeration value="Брокер"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="PathCode">
+                <xsd:annotation>
+                    <xsd:documentation>Код маршрута</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Пост-контроль"/>
+                        <xsd:enumeration value="Пред-контроль"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="TtCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код ТТ\ЦОК</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ToCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код ТО</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="TtAddress" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Адрес ТТ</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="0" name="TtRegionCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AgentLastName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AgentFirstName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AgentMiddleName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AgentPassportSeria" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AgentPassportNumber" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AgentAgreeName" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="BrokerId" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="BrokerAgentId" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ApplWebId" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="EstablishWay" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AgentLastName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Фамилия сотрудника ТО</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AgentFirstName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Имя сотрудника ТО</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AgentMiddleName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Отчество сотрудника ТО</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AgentPassportSeria" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Серия паспорта сотрудника, оформляющего кредит</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AgentPassportNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер паспорта сотрудника, оформляющего кредит</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AgentAgreeName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>ФИО Сотрудника c агентским договором</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="BrokerId" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Идентификатор брокера</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="BrokerAgentId" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Идентификатора сотрудника Брокера\ТО</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ApplWebId" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Внешний идентификатор заявки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EstablishWay" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Способ заведения заявки</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="0" name="WebAddress" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="AttractionSource" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="WebCampContent" type="xsd:string"/>
@@ -53,10 +165,14 @@
             <xsd:element maxOccurs="1" minOccurs="0" name="Browser" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="BrowserLang" type="xsd:string"/>
             <xsd:element maxOccurs="1" minOccurs="0" name="ScreenDef" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="DeliveryOrgCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="DeliveryAddress" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="ApplicationId" type="xsd:string"/>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Contact" type="ContactWeb"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DeliveryOrgCode" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="DeliveryAddress" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ApplicationId" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Идентификатор заявки в Siebel</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="Contact" type="ContactWeb"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="Goods" type="GoodsWeb"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="ApplicationAttachment"
                 type="ApplicationAttachment"/>
@@ -98,39 +214,213 @@
     </xsd:complexType>
     <xsd:complexType name="ContactWeb">
         <xsd:sequence>
-            <xsd:element name="MonthPersonalIncome" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="MonthFamilyIncome" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="MonthFamilyExpenses" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="MaritalStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="NumberChild" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="NumberDepend" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="MonthPersonalIncome" maxOccurs="1" minOccurs="1" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Ежемесячный персональных доход</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MonthFamilyIncome" maxOccurs="1" minOccurs="1" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Ежемесячный доход семьи
+</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MonthFamilyExpenses" maxOccurs="1" minOccurs="1" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Ежемесячный расход семьи</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="MaritalStatus" maxOccurs="1" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Семейное положение</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Холост/Не замужем"/>
+                        <xsd:enumeration value="Разведен(на)"/>
+                        <xsd:enumeration value="Женат/Замужем"/>
+                        <xsd:enumeration value="Гражданский брак"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="NumberChild" maxOccurs="1" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Кол-во детей</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Нет"/>
+                        <xsd:enumeration value="Один"/>
+                        <xsd:enumeration value="Двое"/>
+                        <xsd:enumeration value="Трое"/>
+                        <xsd:enumeration value="Больше трех"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="NumberDepend" maxOccurs="1" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Кол-во иждивенцев</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Нет"/>
+                        <xsd:enumeration value="Один"/>
+                        <xsd:enumeration value="Двое"/>
+                        <xsd:enumeration value="Трое"/>
+                        <xsd:enumeration value="Больше трех"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
             <xsd:element name="EmailAddress" maxOccurs="1" minOccurs="0" type="xsd:string"/>
-            <xsd:element name="AddressStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="Education" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="AddressStatus" maxOccurs="1" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Статус жилья</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Собственное"/>
+                        <xsd:enumeration value="Съемное жилье"/>
+                        <xsd:enumeration value="Проживаю у родств./знакомых"/>
+                        <xsd:enumeration value="Муниципальное, служебное"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Education" maxOccurs="1" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Образование</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Начальное"/>
+                        <xsd:enumeration value="Среднее"/>
+                        <xsd:enumeration value="Среднее специальное"/>
+                        <xsd:enumeration value="Высшее"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
             <xsd:element name="LastName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
             <xsd:element name="FirstName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
             <xsd:element name="MiddleName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
-            <xsd:element name="BirthDate" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="Gender" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="BirthPlace" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="ChangeLastNameFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="PrevLastName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
-            <xsd:element name="PrevFirstName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
-            <xsd:element name="PrevMiddleName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
-            <xsd:element name="CardName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
-            <xsd:element name="Citizenship" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="SocialStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+            <xsd:element name="BirthDate" maxOccurs="1" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Место рождения</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Gender" maxOccurs="1" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Пол</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="М"/>
+                        <xsd:enumeration value="Ж"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="BirthPlace" maxOccurs="1" minOccurs="1" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Место рождения</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ChangeLastNameFlag" maxOccurs="1" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Флаг изменения фамилии</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="0"/>
+                        <xsd:enumeration value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="PrevLastName" maxOccurs="1" minOccurs="0" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Предыдущая фамилия</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="PrevFirstName" maxOccurs="1" minOccurs="0" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Предыдущее имя</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="PrevMiddleName" maxOccurs="1" minOccurs="0" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Предыдущее отчество</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="CardName" maxOccurs="1" minOccurs="0" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Имя на карте</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Citizenship" maxOccurs="1" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Гражданство</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Иное"/>
+                        <xsd:enumeration value="Российская Федерация"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="SocialStatus" maxOccurs="1" minOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>Социальный статус</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Не работаю"/>
+                        <xsd:enumeration value="Служу/Работаю"/>
+                        <xsd:enumeration value="Студент"/>
+                        <xsd:enumeration value="Домохозяйка"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
             <xsd:element name="Ipdl" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="VisualAssesCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
-            <xsd:element name="SecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element name="AnswerSecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Address" type="AddressWeb" />
-            <xsd:element name="Asset" maxOccurs="unbounded" minOccurs="0" type="Asset"/>
-            <xsd:element name="Phone" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:Phone"/>
+            <xsd:element name="VisualAssesCode" maxOccurs="1" minOccurs="0" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Визуальная оценка заемщика</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="SecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Секретный вопрос</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="AnswerSecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Ответ на секретный вопрос</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Address" type="AddressWeb">
+                <xsd:annotation>
+                    <xsd:documentation>Адрес</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Asset" maxOccurs="unbounded" minOccurs="0" type="Asset">
+                <xsd:annotation>
+                    <xsd:documentation>Имущество</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Phone" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:Phone">
+                <xsd:annotation>
+                    <xsd:documentation>Телефон</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element minOccurs="0" maxOccurs="unbounded" name="ContactEmployment"
                 type="ContactEmploymentWeb"/>
             <xsd:element minOccurs="1" maxOccurs="unbounded" name="ContactCredential"
-                type="ContactCredential"/>
+                type="ContactCredential">
+                <xsd:annotation>
+                    <xsd:documentation>Документы заемщика</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="GoodsWeb">
@@ -222,27 +512,100 @@
     </xsd:complexType>
     <xsd:complexType name="Asset">
         <xsd:all>
-            <xsd:element maxOccurs="1" minOccurs="1" name="AssetType" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AutoMark" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AutoModel" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AutoIssueDate" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="AssetType" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Тип имущества</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AutoMark" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Марка авто</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AutoModel" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Модель авто</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AutoIssueDate" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Год выпуска авто</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
         </xsd:all>
     </xsd:complexType>
     <xsd:complexType name="Phone">
         <xsd:all>
-            <xsd:element maxOccurs="1" minOccurs="1" name="UseType" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="PhoneNumber" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="AddPhoneNum" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="UseType">
+                <xsd:annotation>
+                    <xsd:documentation>Тип телефона</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Мобильный"/>
+                        <xsd:enumeration value="Домашний"/>
+                        <xsd:enumeration value="Контактный"/>
+                        <xsd:enumeration value="Рекомендуемый"/>
+                        <xsd:enumeration value="Телефон регистрации"/>
+                        <xsd:enumeration value="Рабочий"/>
+                        <xsd:enumeration value="Мобильный 2"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="PhoneNumber">
+                <xsd:annotation>
+                    <xsd:documentation>Номер телефона</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:length value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AddPhoneNum" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Добавочный</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
         </xsd:all>
     </xsd:complexType>
     <xsd:complexType name="ContactCredential">
         <xsd:all>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Seria" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Number" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="IssueBy" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="IssueDate" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="IssueByCode" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Category" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Seria" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Серия документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Number" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Номер документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="IssueBy" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Кем выдан</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="IssueDate">
+                <xsd:annotation>
+                    <xsd:documentation>Когда выдан</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="IssueByCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Код подразделения</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Category" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Тип документа</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
         </xsd:all>
     </xsd:complexType>
     <xsd:element name="createApplication" type="createApplication"/>
@@ -365,12 +728,69 @@
     </xsd:complexType>
     <xsd:complexType name="ContactEmploymentWeb">
         <xsd:all>
-            <xsd:element maxOccurs="1" minOccurs="0" name="EmployeeNumber" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Employer" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="FioManager" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Industry" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="0" name="Position" type="xsd:string"/>
-            <xsd:element maxOccurs="1" minOccurs="1" name="StartDate" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="EmployeeNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Кол-во сотрудников в орг-и
+До 10 человек
+От 10 до 100 человек
+От 100 до 1000 человек
+Свыше 1000 человек</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Employer" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Огранизация</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FioManager" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Руководитель</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Industry" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Индустрия
+A	Сельское и лесное хозяйство, охота
+B	Рыбное хозяйство, добыча водных биоресурсов
+C	Добыча полезных ископаемых
+D	Тяжелая, легкая, пищевая пром., химия, парфюмерия, фармацевтика
+E	Производство и распределение электроэнергии, газа и воды
+F	Строительство, производство стройматериалов, дорожные службы
+G	Торговля, ремонт и бытовое обслуживание
+H	Туристический и гостиничный бизнес, общепит и рестораны
+I	Транспорт, логистика, связь, информ.технологии, телекоммуникации
+J	Финансы, банковское дело, страхование, аудит, консалтинг
+K	Операции с недвижимым имуществом, аренда и предоставление услуг
+L	Федеральное, муниципальное управление, армия, силовики, таможня
+M	Наука и образование
+N	Здравоохранение и социальная помощь
+O	ЖКХ, СМИ,реклама,культура,охрана, услуги для юр.и физ.лиц, спорт
+P	Экстерриториальные организаций
+Z	Прочее
+</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Position" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Должность
+Служащий\Специалист
+Административный персонал
+Военнослужащий по контракту
+Руководитель среднего звена
+Руководитель высшего звена
+</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="StartDate">
+                <xsd:annotation>
+                    <xsd:documentation>Дата трудоустройства</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
         </xsd:all>
     </xsd:complexType>
     <xsd:complexType name="ListOfContactCredential">
