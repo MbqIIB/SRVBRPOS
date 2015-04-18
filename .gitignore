@@ -20,6 +20,9 @@ $RECYCLE.BIN/
 *.log
 *.mbtest
 *.prefs
+*.7z
+*.zip
+*.rar
 /IBMdefined/
 /log/
 *.project
