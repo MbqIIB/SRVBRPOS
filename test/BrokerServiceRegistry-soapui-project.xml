@@ -801,7 +801,7 @@
       <xsd:element name="DocType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
     </xsd:sequence>
   </xsd:complexType>
-</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute</con:endpoint><con:endpoint>http://dc2-esbprod03:7180/eai_rus</con:endpoint></con:endpoints><con:operation isOneWay="false" action="document/http://siebel.com/CustomUI:checkScoreResult" name="checkScoreResult" bindingOperationName="checkScoreResult" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://dc2-esbprod03:7180/eai_rus</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI">
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute</con:endpoint><con:endpoint>http://dc2-esbprod03:7180/eai_rus</con:endpoint><con:endpoint>http://172.19.2.10/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute</con:endpoint></con:endpoints><con:operation isOneWay="false" action="document/http://siebel.com/CustomUI:checkScoreResult" name="checkScoreResult" bindingOperationName="checkScoreResult" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://dc2-esbprod03:7180/eai_rus</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI">
    <soapenv:Header/>
    <soapenv:Body>
       <cus:checkScoreResult_Input>
@@ -1091,163 +1091,156 @@
          <atc:createApplication>
             <!--Zero or more repetitions:-->
             <atc:Application>
-               <atc:Type>?</atc:Type>
+               <atc:Type>POS</atc:Type>
                <!--Optional:-->
-               <atc:ProductCode>?</atc:ProductCode>
+               
                <!--Optional:-->
-               <atc:Product2Code>?</atc:Product2Code>
+               <atc:ProductCode>VTB_EXP_STANDART</atc:ProductCode>
                <!--Optional:-->
-               <atc:TermCredit>?</atc:TermCredit>
+               
                <!--Optional:-->
-               <atc:AmountCredit>?</atc:AmountCredit>
+               <atc:TermCredit>12</atc:TermCredit>
+               <atc:AmountCredit>50000</atc:AmountCredit><atc:FirstPayment>10000</atc:FirstPayment>
+               <atc:InsuranceForm>Нет</atc:InsuranceForm>
+               
+                <atc:InsuranceType>Жизнь</atc:InsuranceType><atc:Channel>Web</atc:Channel>
+               <atc:PathCode>Пост-контроль</atc:PathCode>
+               <atc:TtCode>01030010037802</atc:TtCode>
                <!--Optional:-->
-               <atc:AnnualPayment>?</atc:AnnualPayment>
-               <atc:FirstPayment>?</atc:FirstPayment>
-               <atc:InsuranceForm>?</atc:InsuranceForm>
+              
                <!--Optional:-->
-               <atc:InsuranceType>?</atc:InsuranceType>
+              
                <!--Optional:-->
-               <atc:CardType>?</atc:CardType>
+              
                <!--Optional:-->
-               <atc:PersonalElectronicSignature>?</atc:PersonalElectronicSignature>
-               <atc:Channel>?</atc:Channel>
-               <atc:PathCode>?</atc:PathCode>
-               <atc:TtCode>?</atc:TtCode>
+              
                <!--Optional:-->
-               <atc:ToCode>?</atc:ToCode>
+              
                <!--Optional:-->
-               <atc:TtAddress>?</atc:TtAddress>
+              
                <!--Optional:-->
-               <atc:TtRegionCode>?</atc:TtRegionCode>
+              
                <!--Optional:-->
-               <atc:AgentLastName>?</atc:AgentLastName>
+              
                <!--Optional:-->
-               <atc:AgentFirstName>?</atc:AgentFirstName>
+              
+               <atc:ToCode>010300100378</atc:ToCode><atc:BrokerId>8</atc:BrokerId>
+               <atc:BrokerAgentId>12345</atc:BrokerAgentId>
                <!--Optional:-->
-               <atc:AgentMiddleName>?</atc:AgentMiddleName>
+              
                <!--Optional:-->
-               <atc:AgentPassportSeria>?</atc:AgentPassportSeria>
+              
                <!--Optional:-->
-               <atc:AgentPassportNumber>?</atc:AgentPassportNumber>
+              
                <!--Optional:-->
-               <atc:AgentAgreeName>?</atc:AgentAgreeName>
-               <atc:BrokerId>?</atc:BrokerId>
-               <atc:BrokerAgentId>?</atc:BrokerAgentId>
+              
                <!--Optional:-->
-               <atc:ApplWebId>?</atc:ApplWebId>
+              
                <!--Optional:-->
-               <atc:EstablishWay>?</atc:EstablishWay>
+              
                <!--Optional:-->
-               <atc:WebAddress>?</atc:WebAddress>
+              
                <!--Optional:-->
-               <atc:AttractionSource>?</atc:AttractionSource>
+              
                <!--Optional:-->
-               <atc:WebCampContent>?</atc:WebCampContent>
+              
                <!--Optional:-->
-               <atc:WebCampKeyWord>?</atc:WebCampKeyWord>
+              
                <!--Optional:-->
-               <atc:WebCampType>?</atc:WebCampType>
+              
                <!--Optional:-->
-               <atc:AdverisingCampaign>?</atc:AdverisingCampaign>
+              
                <!--Optional:-->
-               <atc:UserIP>?</atc:UserIP>
-               <!--Optional:-->
-               <atc:PageURL>?</atc:PageURL>
-               <!--Optional:-->
-               <atc:CompLocalTime>?</atc:CompLocalTime>
-               <!--Optional:-->
-               <atc:Device>?</atc:Device>
-               <!--Optional:-->
-               <atc:OperSystem>?</atc:OperSystem>
+              
                <!--Optional:-->
                <atc:Browser>?</atc:Browser>
                <!--Optional:-->
-               <atc:BrowserLang>?</atc:BrowserLang>
+              
                <!--Optional:-->
-               <atc:ScreenDef>?</atc:ScreenDef>
-               <atc:DeliveryOrgCode>?</atc:DeliveryOrgCode>
-               <atc:DeliveryAddress>?</atc:DeliveryAddress>
+              
+               <atc:DeliveryOrgCode>0603001001</atc:DeliveryOrgCode>
+               <atc:DeliveryAddress/>
                <!--Optional:-->
-               <atc:ApplicationId>?</atc:ApplicationId>
+              
                <!--Zero or more repetitions:-->
                <atc:Contact>
-                  <atc:AddressStatus>?</atc:AddressStatus>
-                  <atc:AnswerSecurityQuestion>?</atc:AnswerSecurityQuestion>
-                  <atc:BirthDate>?</atc:BirthDate>
-                  <atc:BirthPlace>?</atc:BirthPlace>
-                  <atc:ChangeLastNameFlag>?</atc:ChangeLastNameFlag>
-                  <atc:Citizenship>?</atc:Citizenship>
-                  <atc:Education>?</atc:Education>
+                  <atc:AddressStatus>Проживаю у родств./знакомых</atc:AddressStatus>
+                  <atc:AnswerSecurityQuestion>Да</atc:AnswerSecurityQuestion>
+                  <atc:BirthDate>10/19/1970</atc:BirthDate>
+                  <atc:BirthPlace>Петрозаводск</atc:BirthPlace>
+                  <atc:ChangeLastNameFlag>0</atc:ChangeLastNameFlag>
+                  <atc:Citizenship>Российская Федерация</atc:Citizenship>
+                  <atc:Education>Среднее специальное</atc:Education>
                   <!--Optional:-->
-                  <atc:EmailAddress>?</atc:EmailAddress>
-                  <atc:Ipdl>?</atc:Ipdl>
-                  <atc:FirstName>?</atc:FirstName>
-                  <atc:LastName>?</atc:LastName>
-                  <atc:Gender>?</atc:Gender>
+                  <atc:EmailAddress>fga@mail.ru</atc:EmailAddress>
+                  <atc:Ipdl>0</atc:Ipdl>
+                  <atc:FirstName>Галина</atc:FirstName>
+                  <atc:LastName>Фёдорова</atc:LastName>
+                  <atc:Gender>Ж</atc:Gender>
                   <!--Optional:-->
-                  <atc:MaritalStatus>?</atc:MaritalStatus>
+                  <atc:MaritalStatus>Гражданский брак</atc:MaritalStatus>
                   <!--Optional:-->
-                  <atc:MiddleName>?</atc:MiddleName>
-                  <atc:MonthFamilyExpenses>?</atc:MonthFamilyExpenses>
-                  <atc:MonthFamilyIncome>?</atc:MonthFamilyIncome>
-                  <atc:MonthPersonalIncome>?</atc:MonthPersonalIncome>
-                  <atc:NumberChild>?</atc:NumberChild>
-                  <atc:NumberDepend>?</atc:NumberDepend>
+                  <atc:MiddleName>Александровна</atc:MiddleName>
+                  <atc:MonthFamilyExpenses>20000</atc:MonthFamilyExpenses>
+                  <atc:MonthFamilyIncome>400000</atc:MonthFamilyIncome>
+                  <atc:MonthPersonalIncome>300000</atc:MonthPersonalIncome>
+                  <atc:NumberChild>Один</atc:NumberChild>
+                  <atc:NumberDepend>Один</atc:NumberDepend>
                   <!--Optional:-->
-                  <atc:PrevLastName>?</atc:PrevLastName>
-                  <atc:SecurityQuestion>?</atc:SecurityQuestion>
-                  <atc:SocialStatus>?</atc:SocialStatus>
-                  <atc:VisualAssesCode>?</atc:VisualAssesCode>
+                 
+                  <atc:SecurityQuestion>Нет</atc:SecurityQuestion>
+                  <atc:SocialStatus>Студент</atc:SocialStatus>
+                  <atc:VisualAssesCode>0</atc:VisualAssesCode>
                   <!--Optional:-->
                   <atc:ListOfAddress>
                      <!--Zero or more repetitions:-->
                      <atc:Address>
                         <!--You may enter the following 26 items in any order-->
-                        <atc:KladrFlag>?</atc:KladrFlag>
-                        <atc:Zipcode>?</atc:Zipcode>
-                        <atc:Country>?</atc:Country>
-                        <atc:PostAddressFlag>?</atc:PostAddressFlag>
-                        <atc:LivingAddressFlag>?</atc:LivingAddressFlag>
-                        <atc:RegAddressFlag>?</atc:RegAddressFlag>
+                        <atc:KladrFlag>1</atc:KladrFlag>
+                        <atc:Zipcode>398043</atc:Zipcode>
+                        <atc:Country>Российская Федерация</atc:Country>
+                        <atc:PostAddressFlag>1</atc:PostAddressFlag>
+                        <atc:LivingAddressFlag>1</atc:LivingAddressFlag>
+                        <atc:RegAddressFlag>1</atc:RegAddressFlag>
                         <!--Optional:-->
-                        <atc:WorkAddressFlag>?</atc:WorkAddressFlag>
-                        <atc:RegionCode>?</atc:RegionCode>
+                        <atc:WorkAddressFlag>0</atc:WorkAddressFlag>
+                        <atc:RegionCode>48</atc:RegionCode>
                         <!--Optional:-->
-                        <atc:District>?</atc:District>
+                       
                         <!--Optional:-->
-                        <atc:DistrictType>?</atc:DistrictType>
+                       
                         <!--Optional:-->
-                        <atc:City>?</atc:City>
+                        <atc:City>Липецк</atc:City>
                         <!--Optional:-->
-                        <atc:CityType>?</atc:CityType>
+                        <atc:CityType>г</atc:CityType>
                         <!--Optional:-->
-                        <atc:Subcity>?</atc:Subcity>
+                       
                         <!--Optional:-->
-                        <atc:SubcityType>?</atc:SubcityType>
+                       
                         <!--Optional:-->
-                        <atc:Street>?</atc:Street>
+                        <atc:Street>Титова</atc:Street>
                         <!--Optional:-->
-                        <atc:StreetType>?</atc:StreetType>
+                       
                         <!--Optional:-->
-                        <atc:StreetKLADRCode>?</atc:StreetKLADRCode>
+                        <atc:StreetKLADRCode>48000001000056100</atc:StreetKLADRCode>
                         <!--Optional:-->
-                        <atc:House>?</atc:House>
+                        <atc:House>7/4</atc:House>
                         <!--Optional:-->
-                        <atc:HouseKLADRCode>?</atc:HouseKLADRCode>
+                        <atc:HouseKLADRCode>48000001000056100</atc:HouseKLADRCode>
                         <!--Optional:-->
-                        <atc:Building>?</atc:Building>
+                        
                         <!--Optional:-->
-                        <atc:Domain>?</atc:Domain>
+                       
                         <!--Optional:-->
-                        <atc:Housing>?</atc:Housing>
+                       
                         <!--Optional:-->
-                        <atc:Flat>?</atc:Flat>
+                        <atc:Flat>23</atc:Flat>
                         <!--Optional:-->
-                        <atc:KladrCode>?</atc:KladrCode>
+                        <atc:KladrCode>48000001000056100</atc:KladrCode>
                         <!--Optional:-->
-                        <atc:RegDate>?</atc:RegDate>
+                        <atc:RegDate>10/10/2010</atc:RegDate>
                         <!--Optional:-->
-                        <atc:GniCode>?</atc:GniCode>
+                        
                      </atc:Address>
                   </atc:ListOfAddress>
                   <!--Optional:-->
@@ -1255,13 +1248,13 @@
                      <!--Zero or more repetitions:-->
                      <atc:Asset>
                         <!--You may enter the following 4 items in any order-->
-                        <atc:AssetType>?</atc:AssetType>
+                        <atc:AssetType>Квартира</atc:AssetType>
                         <!--Optional:-->
-                        <atc:AutoMark>?</atc:AutoMark>
+                       
                         <!--Optional:-->
-                        <atc:AutoModel>?</atc:AutoModel>
+                        
                         <!--Optional:-->
-                        <atc:AutoIssueDate>?</atc:AutoIssueDate>
+                       
                      </atc:Asset>
                   </atc:ListOfAsset>
                   <!--Optional:-->
@@ -1269,26 +1262,33 @@
                      <!--Zero or more repetitions:-->
                      <atc:Phone>
                         <!--You may enter the following 3 items in any order-->
-                        <atc:UseType>?</atc:UseType>
-                        <atc:PhoneNumber>?</atc:PhoneNumber>
+                        <atc:UseType>Мобильный</atc:UseType>
+                        <atc:PhoneNumber>9262506547</atc:PhoneNumber>
                         <!--Optional:-->
-                        <atc:AddPhoneNum>?</atc:AddPhoneNum>
+                       
                      </atc:Phone>
-                  </atc:ListOfPhone>
+                           <atc:Phone>
+                        <!--You may enter the following 3 items in any order-->
+                        <atc:UseType>Домашний</atc:UseType>
+                        <atc:PhoneNumber>9262506547</atc:PhoneNumber>
+                        <!--Optional:-->
+                       
+                     </atc:Phone>
+                 </atc:ListOfPhone>
                   <!--Optional:-->
                   <atc:ListOfContactEmployment>
                      <!--Zero or more repetitions:-->
                      <atc:ContactEmployment>
                         <!--Optional:-->
-                        <atc:EmployeeNumber>?</atc:EmployeeNumber>
-                        <atc:Employer>?</atc:Employer>
+                        <atc:EmployeeNumber>Свыше 1000 человек</atc:EmployeeNumber>
+                        <atc:Employer>Ктото</atc:Employer>
                         <!--Optional:-->
-                        <atc:FioManager>?</atc:FioManager>
+                       
                         <!--Optional:-->
-                        <atc:Industry>?</atc:Industry>
+                       
                         <!--Optional:-->
-                        <atc:Position>?</atc:Position>
-                        <atc:StartDate>?</atc:StartDate>
+                       
+                        <atc:StartDate/>
                      </atc:ContactEmployment>
                   </atc:ListOfContactEmployment>
                   <!--Optional:-->
@@ -1296,39 +1296,298 @@
                      <!--1 or more repetitions:-->
                      <atc:ContactCredential>
                         <!--You may enter the following 6 items in any order-->
-                        <atc:Seria>?</atc:Seria>
-                        <atc:Number>?</atc:Number>
+                        <atc:Seria>4902</atc:Seria>
+                        <atc:Number>305361</atc:Number>
                         <!--Optional:-->
-                        <atc:IssueBy>?</atc:IssueBy>
+                       
                         <!--Optional:-->
-                        <atc:IssueDate>?</atc:IssueDate>
+                        <atc:IssueDate>06/25/2002</atc:IssueDate>
                         <!--Optional:-->
-                        <atc:IssueByCode>?</atc:IssueByCode>
-                        <atc:Category>?</atc:Category>
+                        <atc:IssueByCode>532-001</atc:IssueByCode>
+                        <atc:Category>Паспорт РФ</atc:Category>
                      </atc:ContactCredential>
                   </atc:ListOfContactCredential>
                </atc:Contact>
                <!--Zero or more repetitions:-->
-               <atc:Goods>
-                  <atc:Code>?</atc:Code>
-                  <!--Optional:-->
-                  <atc:Mark>?</atc:Mark>
-                  <!--Optional:-->
-                  <atc:Model>?</atc:Model>
-                  <atc:Quantity>?</atc:Quantity>
-                  <atc:Price>?</atc:Price>
-                  <!--Optional:-->
-                  <atc:OptyId>?</atc:OptyId>
-               </atc:Goods>
-               <!--Zero or more repetitions:-->
+              <!--Zero or more repetitions:
                <atc:ApplicationAttachment>
-                  <atc:OpptyFileName>?</atc:OpptyFileName>
-                  <atc:DocType>?</atc:DocType>
-                  <atc:OpptyFileBuffer>PCFET0NUWVBFIGh0bWw+PGh0bWw+PEhFQUQ+PG1ldGEgY2hhcnNldD0idXRmLTgiPjxUSVRMRT4g0J7RiNC40LHQutCwINC/0YDQuCDQstGL0L/QvtC70L3QtdC90LjQuCDQt9Cw0L/RgNC+0YHQsDwvVElUTEU+PC9IRUFEPjxCT0RZPjxwPtCX0LDRj9Cy0LrQsCDQvdC1INC90LDQudC00LXQvdCwPC9wPjwvQk9EWT48L2h0bWw+</atc:OpptyFileBuffer>
-                  <atc:OpptyFileExt>?</atc:OpptyFileExt>
+                  <atc:OpptyFileName></atc:OpptyFileName>
+                  <atc:DocType></atc:DocType>
+                  <atc:OpptyFileBuffer></atc:OpptyFileBuffer>
+                  <atc:OpptyFileExt></atc:OpptyFileExt>
+               </atc:ApplicationAttachment>-->
+                 <atc:Goods><atc:Code>241</atc:Code><atc:Mark>1</atc:Mark><atc:Model>2</atc:Model><atc:Quantity>1</atc:Quantity><atc:Price>50000</atc:Price></atc:Goods><atc:ApplicationAttachment>
+                     <atc:OpptyFileName>Фотография 1</atc:OpptyFileName>
+                    <atc:OpptyFileExt>png</atc:OpptyFileExt>
+                     <atc:OpptyFileBuffer>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</atc:OpptyFileBuffer>
+                    <atc:DocType>Фотография</atc:DocType>
+                  </atc:ApplicationAttachment>
+                  <atc:ApplicationAttachment>
+                     <atc:OpptyFileName>паспорт</atc:OpptyFileName>
+                     <atc:OpptyFileExt>png</atc:OpptyFileExt>
+                     <atc:OpptyFileBuffer>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</atc:OpptyFileBuffer>
+                    <atc:DocType>2-я страница паспорта/разворот</atc:DocType>
+                  </atc:ApplicationAttachment>
+                 <atc:ApplicationAttachment>
+                    <atc:OpptyFileName>регистрация</atc:OpptyFileName>
+                    <atc:OpptyFileExt>png</atc:OpptyFileExt>
+                    <atc:OpptyFileBuffer>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</atc:OpptyFileBuffer>
+                    <atc:DocType>Страница паспорта с адресом</atc:DocType>
+                  </atc:ApplicationAttachment>
+            </atc:Application>
+         </atc:createApplication>
+      </cus:scoreOptyWeb_Input>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="document/http://siebel.com/CustomUI:scoreOptyWeb"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Copy of Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:atc="http://www.siebel.com/xml/ATC%20Opportunity%20POS">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:scoreOptyWeb_Input>
+         <atc:createApplication>
+            <!--Zero or more repetitions:-->
+            <atc:Application>
+               <atc:Type>POS</atc:Type>
+               <!--Optional:-->
+               
+               <!--Optional:-->
+               <atc:ProductCode>VTB_EXP_STANDART</atc:ProductCode>
+               <!--Optional:-->
+               
+               <!--Optional:-->
+               <atc:TermCredit>12</atc:TermCredit>
+               <atc:AmountCredit>50000</atc:AmountCredit><atc:FirstPayment>10000</atc:FirstPayment>
+               <atc:InsuranceForm>Нет</atc:InsuranceForm>
+               
+                <atc:InsuranceType>Жизнь</atc:InsuranceType><atc:Channel>Web</atc:Channel>
+               <atc:PathCode>Пост-контроль</atc:PathCode>
+               <atc:TtCode>01030010037802</atc:TtCode>
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <atc:ToCode>010300100378</atc:ToCode><atc:BrokerId>8</atc:BrokerId>
+               <atc:BrokerAgentId>12345</atc:BrokerAgentId>
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <!--Optional:-->
+               <atc:Browser>?</atc:Browser>
+               <!--Optional:-->
+              
+               <!--Optional:-->
+              
+               <atc:DeliveryOrgCode>0603001001</atc:DeliveryOrgCode>
+               <atc:DeliveryAddress/>
+               <!--Optional:-->
+              
+               <!--Zero or more repetitions:-->
+               <atc:Contact>
+                  <atc:AddressStatus>Проживаю у родств./знакомых</atc:AddressStatus>
+                  <atc:AnswerSecurityQuestion>Да</atc:AnswerSecurityQuestion>
+                  <atc:BirthDate>10/19/1970</atc:BirthDate>
+                  <atc:BirthPlace>Петрозаводск</atc:BirthPlace>
+                  <atc:ChangeLastNameFlag>0</atc:ChangeLastNameFlag>
+                  <atc:Citizenship>Российская Федерация</atc:Citizenship>
+                  <atc:Education>Среднее специальное</atc:Education>
                   <!--Optional:-->
-                  <atc:OpptyId>?</atc:OpptyId>
-               </atc:ApplicationAttachment>
+                  <atc:EmailAddress>fga@mail.ru</atc:EmailAddress>
+                  <atc:Ipdl>0</atc:Ipdl>
+                  <atc:FirstName>Галина</atc:FirstName>
+                  <atc:LastName>Фёдорова</atc:LastName>
+                  <atc:Gender>Ж</atc:Gender>
+                  <!--Optional:-->
+                  <atc:MaritalStatus>Гражданский брак</atc:MaritalStatus>
+                  <!--Optional:-->
+                  <atc:MiddleName>Александровна</atc:MiddleName>
+                  <atc:MonthFamilyExpenses>20000</atc:MonthFamilyExpenses>
+                  <atc:MonthFamilyIncome>400000</atc:MonthFamilyIncome>
+                  <atc:MonthPersonalIncome>300000</atc:MonthPersonalIncome>
+                  <atc:NumberChild>Один</atc:NumberChild>
+                  <atc:NumberDepend>Один</atc:NumberDepend>
+                  <!--Optional:-->
+                 
+                  <atc:SecurityQuestion>Нет</atc:SecurityQuestion>
+                  <atc:SocialStatus>Студент</atc:SocialStatus>
+                  <atc:VisualAssesCode>0</atc:VisualAssesCode>
+                  <!--Optional:-->
+                  <atc:ListOfAddress>
+                     <!--Zero or more repetitions:-->
+                     <atc:Address>
+                        <!--You may enter the following 26 items in any order-->
+                        <atc:KladrFlag>1</atc:KladrFlag>
+                        <atc:Zipcode>398043</atc:Zipcode>
+                        <atc:Country>Российская Федерация</atc:Country>
+                        <atc:PostAddressFlag>1</atc:PostAddressFlag>
+                        <atc:LivingAddressFlag>1</atc:LivingAddressFlag>
+                        <atc:RegAddressFlag>1</atc:RegAddressFlag>
+                        <!--Optional:-->
+                        <atc:WorkAddressFlag>0</atc:WorkAddressFlag>
+                        <atc:RegionCode>48</atc:RegionCode>
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                        <atc:City>Липецк</atc:City>
+                        <!--Optional:-->
+                        <atc:CityType>г</atc:CityType>
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                        <atc:Street>Титова</atc:Street>
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                        <atc:StreetKLADRCode>48000001000056100</atc:StreetKLADRCode>
+                        <!--Optional:-->
+                        <atc:House>7/4</atc:House>
+                        <!--Optional:-->
+                        <atc:HouseKLADRCode>48000001000056100</atc:HouseKLADRCode>
+                        <!--Optional:-->
+                        
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                        <atc:Flat>23</atc:Flat>
+                        <!--Optional:-->
+                        <atc:KladrCode>48000001000056100</atc:KladrCode>
+                        <!--Optional:-->
+                        <atc:RegDate>10/10/2010</atc:RegDate>
+                        <!--Optional:-->
+                        
+                     </atc:Address>
+                  </atc:ListOfAddress>
+                  <!--Optional:-->
+                  <atc:ListOfAsset>
+                     <!--Zero or more repetitions:-->
+                     <atc:Asset>
+                        <!--You may enter the following 4 items in any order-->
+                        <atc:AssetType>Квартира</atc:AssetType>
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                        
+                        <!--Optional:-->
+                       
+                     </atc:Asset>
+                  </atc:ListOfAsset>
+                  <!--Optional:-->
+                  <atc:ListOfPhone>
+                     <!--Zero or more repetitions:-->
+                     <atc:Phone>
+                        <!--You may enter the following 3 items in any order-->
+                        <atc:UseType>Мобильный</atc:UseType>
+                        <atc:PhoneNumber>9262506547</atc:PhoneNumber>
+                        <!--Optional:-->
+                       
+                     </atc:Phone>
+                           <atc:Phone>
+                        <!--You may enter the following 3 items in any order-->
+                        <atc:UseType>Домашний</atc:UseType>
+                        <atc:PhoneNumber>9262506547</atc:PhoneNumber>
+                        <!--Optional:-->
+                       
+                     </atc:Phone>
+                 </atc:ListOfPhone>
+                  <!--Optional:-->
+                  <atc:ListOfContactEmployment>
+                     <!--Zero or more repetitions:-->
+                     <atc:ContactEmployment>
+                        <!--Optional:-->
+                        <atc:EmployeeNumber>Свыше 1000 человек</atc:EmployeeNumber>
+                        <atc:Employer>Ктото</atc:Employer>
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                       
+                        <atc:StartDate/>
+                     </atc:ContactEmployment>
+                  </atc:ListOfContactEmployment>
+                  <!--Optional:-->
+                  <atc:ListOfContactCredential>
+                     <!--1 or more repetitions:-->
+                     <atc:ContactCredential>
+                        <!--You may enter the following 6 items in any order-->
+                        <atc:Seria>4902</atc:Seria>
+                        <atc:Number>305361</atc:Number>
+                        <!--Optional:-->
+                       
+                        <!--Optional:-->
+                        <atc:IssueDate>06/25/2002</atc:IssueDate>
+                        <!--Optional:-->
+                        <atc:IssueByCode>532-001</atc:IssueByCode>
+                        <atc:Category>Паспорт РФ</atc:Category>
+                     </atc:ContactCredential>
+                  </atc:ListOfContactCredential>
+               </atc:Contact>
+               <!--Zero or more repetitions:-->
+              <!--Zero or more repetitions:
+               <atc:ApplicationAttachment>
+                  <atc:OpptyFileName></atc:OpptyFileName>
+                  <atc:DocType></atc:DocType>
+                  <atc:OpptyFileBuffer></atc:OpptyFileBuffer>
+                  <atc:OpptyFileExt></atc:OpptyFileExt>
+               </atc:ApplicationAttachment>-->
+                 <atc:Goods><atc:Code>241</atc:Code><atc:Mark>1</atc:Mark><atc:Model>2</atc:Model><atc:Quantity>1</atc:Quantity><atc:Price>50000</atc:Price></atc:Goods><atc:ApplicationAttachment>
+                     <atc:OpptyFileName>Фотография 1</atc:OpptyFileName>
+                    <atc:OpptyFileExt>png</atc:OpptyFileExt>
+                     <atc:OpptyFileBuffer>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</atc:OpptyFileBuffer>
+                    <atc:DocType>Фотография</atc:DocType>
+                  </atc:ApplicationAttachment>
+                  <atc:ApplicationAttachment>
+                     <atc:OpptyFileName>паспорт</atc:OpptyFileName>
+                     <atc:OpptyFileExt>png</atc:OpptyFileExt>
+                     <atc:OpptyFileBuffer>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</atc:OpptyFileBuffer>
+                    <atc:DocType>2-я страница паспорта/разворот</atc:DocType>
+                  </atc:ApplicationAttachment>
+                 <atc:ApplicationAttachment>
+                    <atc:OpptyFileName>регистрация</atc:OpptyFileName>
+                    <atc:OpptyFileExt>png</atc:OpptyFileExt>
+                    <atc:OpptyFileBuffer>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</atc:OpptyFileBuffer>
+                    <atc:DocType>Страница паспорта с адресом</atc:DocType>
+                  </atc:ApplicationAttachment>
             </atc:Application>
          </atc:createApplication>
       </cus:scoreOptyWeb_Input>
