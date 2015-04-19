@@ -22,40 +22,46 @@
     <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.requestTimeout.internal_npcompiler" name="requestTimeout.internal_npcompiler">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_offerCancelled" name="URL_offerCancelled" defaultValueLiteral="https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute">
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_offerCancelled" name="URL_offerCancelled" defaultValueLiteral="http://172.19.2.10/eai_rus/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;username=SADMIN&amp;password=SADMIN">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_offerCancelled.internal_npcompiler" name="URL_offerCancelled.internal_npcompiler">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_checkScoreResult" name="URL_checkScoreResult" defaultValueLiteral="https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute">
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_checkScoreResult" name="URL_checkScoreResult" defaultValueLiteral="http://172.19.2.10/eai_rus/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;username=SADMIN&amp;password=SADMIN">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_checkScoreResult.internal_npcompiler" name="URL_checkScoreResult.internal_npcompiler">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_getDocs" name="URL_getDocs" defaultValueLiteral="https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute">
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_getDocs" name="URL_getDocs" defaultValueLiteral="http://172.19.2.10/eai_rus/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;username=SADMIN&amp;password=SADMIN">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_getDocs.internal_npcompiler" name="URL_getDocs.internal_npcompiler">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_scopeOpty" name="URL_scopeOpty" defaultValueLiteral="https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute">
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_scopeOpty" name="URL_scopeOpty" defaultValueLiteral="http://172.19.2.10/eai_rus/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;username=SADMIN&amp;password=SADMIN">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_scopeOpty.internal_npcompiler" name="URL_scopeOpty.internal_npcompiler">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_checkStatus" name="URL_checkStatus" defaultValueLiteral="https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute">
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_checkStatus" name="URL_checkStatus" defaultValueLiteral="http://172.19.2.10/eai_rus/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;username=SADMIN&amp;password=SADMIN">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_checkStatus.internal_npcompiler" name="URL_checkStatus.internal_npcompiler">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_docsSigned" name="URL_docsSigned" defaultValueLiteral="https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute">
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_docsSigned" name="URL_docsSigned" defaultValueLiteral="http://172.19.2.10/eai_rus/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;username=SADMIN&amp;password=SADMIN">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_docsSigned.internal_npcompiler" name="URL_docsSigned.internal_npcompiler">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_ScoreOptyWeb" name="URL_ScoreOptyWeb" defaultValueLiteral="http://172.19.2.10/eai_rus/start.swe?SWEExtSource=WebService&amp;SWEExtCmd=Execute&amp;username=SADMIN&amp;password=SADMIN">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.URL_ScoreOptyWeb.internal_npcompiler" name="URL_ScoreOptyWeb.internal_npcompiler">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.dataSource" name="dataSource" defaultValueLiteral="SQLSERVERDB">
@@ -485,53 +491,59 @@
     </composition>
     <propertyOrganizer>
       <propertyDescriptor groupName="Group.BasicSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.queueIN">
-        <propertyName xmi:type="utility:TranslatableString" key="Property.queueIN" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+        <propertyName xmi:type="utility:TranslatableString" key="Property.queueIN" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
         <propertyDescriptor groupName="Group.BasicSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.queueOUT">
-          <propertyName xmi:type="utility:TranslatableString" key="Property.queueOUT" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+          <propertyName xmi:type="utility:TranslatableString" key="Property.queueOUT" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
           <propertyDescriptor groupName="Group.BasicSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.queueErr">
-            <propertyName xmi:type="utility:TranslatableString" key="Property.queueErr" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+            <propertyName xmi:type="utility:TranslatableString" key="Property.queueErr" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
             <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.GenericSOAPOverHTTPPositiveIntegerNonMandatoryPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.requestTimeout">
               <propertyName xmi:type="utility:TranslatableString" key="Property.requestTimeout" bundleName="ComIbmSOAPRequest" pluginId="com.ibm.etools.mft.ibmnodes"/>
               <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.requestTimeout.internal_npcompiler">
                 <propertyName xmi:type="utility:TranslatableString" key="Property.requestTimeout.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                 <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_offerCancelled">
-                  <propertyName xmi:type="utility:TranslatableString" key="Property.URL_offerCancelled" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                  <propertyName xmi:type="utility:TranslatableString" key="Property.URL_offerCancelled" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                   <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_offerCancelled.internal_npcompiler">
                     <propertyName xmi:type="utility:TranslatableString" key="Property.URL_offerCancelled.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                     <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_checkScoreResult">
-                      <propertyName xmi:type="utility:TranslatableString" key="Property.URL_checkScoreResult" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                      <propertyName xmi:type="utility:TranslatableString" key="Property.URL_checkScoreResult" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                       <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_checkScoreResult.internal_npcompiler">
                         <propertyName xmi:type="utility:TranslatableString" key="Property.URL_checkScoreResult.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                         <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_getDocs">
-                          <propertyName xmi:type="utility:TranslatableString" key="Property.URL_getDocs" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                          <propertyName xmi:type="utility:TranslatableString" key="Property.URL_getDocs" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                           <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_getDocs.internal_npcompiler">
                             <propertyName xmi:type="utility:TranslatableString" key="Property.URL_getDocs.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                             <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_scopeOpty">
-                              <propertyName xmi:type="utility:TranslatableString" key="Property.URL_scopeOpty" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                              <propertyName xmi:type="utility:TranslatableString" key="Property.URL_scopeOpty" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                               <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_scopeOpty.internal_npcompiler">
                                 <propertyName xmi:type="utility:TranslatableString" key="Property.URL_scopeOpty.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                                 <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_checkStatus">
-                                  <propertyName xmi:type="utility:TranslatableString" key="Property.URL_checkStatus" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                  <propertyName xmi:type="utility:TranslatableString" key="Property.URL_checkStatus" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                                   <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_checkStatus.internal_npcompiler">
                                     <propertyName xmi:type="utility:TranslatableString" key="Property.URL_checkStatus.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                                     <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_docsSigned">
-                                      <propertyName xmi:type="utility:TranslatableString" key="Property.URL_docsSigned" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                      <propertyName xmi:type="utility:TranslatableString" key="Property.URL_docsSigned" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
                                       <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_docsSigned.internal_npcompiler">
                                         <propertyName xmi:type="utility:TranslatableString" key="Property.URL_docsSigned.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
-                                        <propertyDescriptor groupName="Group.SenderRetry" configurable="true" describedAttribute="Property.dataSource">
-                                          <propertyName xmi:type="utility:TranslatableString" key="Property.dataSource" bundleName="ComIbmDatabase" pluginId="com.ibm.etools.mft.ibmnodes"/>
-                                          <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.dbSource">
-                                            <propertyName xmi:type="utility:TranslatableString" key="Property.dbSource" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
-                                            <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.DEFAULT_DELAY">
-                                              <propertyName xmi:type="utility:TranslatableString" key="Property.DEFAULT_DELAY" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
-                                              <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.DEFAULT_RETRY">
-                                                <propertyName xmi:type="utility:TranslatableString" key="Property.DEFAULT_RETRY" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
-                                                <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.srvName">
-                                                  <propertyName xmi:type="utility:TranslatableString" key="Property.srvName" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
-                                                  <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.tableConfigsName">
-                                                    <propertyName xmi:type="utility:TranslatableString" key="Property.tableConfigsName" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
-                                                    <propertyDescriptor groupName="Group.LogSettings" configurable="true" userDefined="true" describedAttribute="Property.moduleName">
-                                                      <propertyName xmi:type="utility:TranslatableString" key="Property.moduleName" bundleName="letobank/common/utils/logging/AddLog" pluginId="Letobank.COMMON.V2.Lib"/>
+                                        <propertyDescriptor groupName="Group.RequestsSettings" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.http.SOAP_Over_HTTP_WebServicesURLPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.GenericSOAPCompiler" configurable="true" describedAttribute="Property.URL_ScoreOptyWeb">
+                                          <propertyName xmi:type="utility:TranslatableString" key="Property.URL_ScoreOptyWeb" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
+                                          <propertyDescriptor groupName="Group.InternalRuntimeGroup" readOnly="true" hidden="true" userDefined="true" describedAttribute="Property.URL_ScoreOptyWeb.internal_npcompiler">
+                                            <propertyName xmi:type="utility:TranslatableString" key="Property.URL_ScoreOptyWeb.internal_npcompiler" bundleName="letobank/srvbrpos/v1/adp/letobank_srvbrpos_adp_rqhl" pluginId="Letobank.SRVBRPOS.V2.App"/>
+                                            <propertyDescriptor groupName="Group.SenderRetry" configurable="true" describedAttribute="Property.dataSource">
+                                              <propertyName xmi:type="utility:TranslatableString" key="Property.dataSource" bundleName="ComIbmDatabase" pluginId="com.ibm.etools.mft.ibmnodes"/>
+                                              <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.dbSource">
+                                                <propertyName xmi:type="utility:TranslatableString" key="Property.dbSource" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                                <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.DEFAULT_DELAY">
+                                                  <propertyName xmi:type="utility:TranslatableString" key="Property.DEFAULT_DELAY" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                                  <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.DEFAULT_RETRY">
+                                                    <propertyName xmi:type="utility:TranslatableString" key="Property.DEFAULT_RETRY" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                                    <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.srvName">
+                                                      <propertyName xmi:type="utility:TranslatableString" key="Property.srvName" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                                      <propertyDescriptor groupName="Group.SenderRetry" configurable="true" userDefined="true" describedAttribute="Property.tableConfigsName">
+                                                        <propertyName xmi:type="utility:TranslatableString" key="Property.tableConfigsName" bundleName="letobank/common/utils/senders/CheckSendingConfiguration" pluginId="Letobank.SRVBRPOS.V1.App"/>
+                                                        <propertyDescriptor groupName="Group.LogSettings" configurable="true" userDefined="true" describedAttribute="Property.moduleName">
+                                                          <propertyName xmi:type="utility:TranslatableString" key="Property.moduleName" bundleName="letobank/common/utils/logging/AddLog" pluginId="Letobank.COMMON.V2.Lib"/>
+                                                        </propertyDescriptor>
+                                                      </propertyDescriptor>
                                                     </propertyDescriptor>
                                                   </propertyDescriptor>
                                                 </propertyDescriptor>
@@ -585,6 +597,9 @@
       <overriddenAttribute href="ComIbmSOAPRequest.msgnode#Property.webServiceURL"/>
     </attributeLinks>
     <attributeLinks promotedAttribute="Property.URL_docsSigned" overriddenNodes="FCMComposite_1_24">
+      <overriddenAttribute href="ComIbmSOAPRequest.msgnode#Property.webServiceURL"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.URL_ScoreOptyWeb" overriddenNodes="FCMComposite_1_88">
       <overriddenAttribute href="ComIbmSOAPRequest.msgnode#Property.webServiceURL"/>
     </attributeLinks>
     <attributeLinks promotedAttribute="Property.dataSource" overriddenNodes="FCMComposite_1_58 FCMComposite_1_56 FCMComposite_1_52 FCMComposite_1_54 FCMComposite_1_50 FCMComposite_1_60 FCMComposite_1_62">
