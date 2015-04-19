@@ -53,7 +53,7 @@
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="0" name="InsuranceType" type="xsd:string">
                             <xsd:annotation>
-                    <xsd:documentation>Тип карты</xsd:documentation>
+                    <xsd:documentation>Тип страховки</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="0" name="CardType" type="xsd:string">
@@ -67,21 +67,15 @@
                     <xsd:documentation>ПЭП</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element maxOccurs="1" minOccurs="1" name="Channel">
+            <xsd:element maxOccurs="1" minOccurs="1" name="Channel" type="xsd:string">
                 <xsd:annotation>
                     <xsd:documentation>Канал поступления заявки: Интернет Брокер</xsd:documentation>
-                </xsd:annotation>
-                <xsd:simpleType>
-                    <xsd:restriction base="xsd:string"/>
-                </xsd:simpleType>
+                </xsd:annotation>
             </xsd:element>
-            <xsd:element maxOccurs="1" minOccurs="1" name="PathCode">
+            <xsd:element maxOccurs="1" minOccurs="1" name="PathCode" type="xsd:string">
                 <xsd:annotation>
                     <xsd:documentation>Код маршрута Пост-контроль Пред-контроль</xsd:documentation>
-                </xsd:annotation>
-                <xsd:simpleType>
-                    <xsd:restriction base="xsd:string"/>
-                </xsd:simpleType>
+                </xsd:annotation>
             </xsd:element>
             <xsd:element maxOccurs="1" minOccurs="1" name="TtCode" type="xsd:string">
                 <xsd:annotation>
