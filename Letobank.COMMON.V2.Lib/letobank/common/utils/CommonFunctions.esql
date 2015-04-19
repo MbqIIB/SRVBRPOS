@@ -1,0 +1,143 @@
+BROKER SCHEMA letobank.common.utils
+PATH letobank.common;
+
+
+CREATE PROCEDURE CopyBranch(IN InputRef REFERENCE, IN OutputRef REFERENCE) BEGIN
+	-- процедура рекурсивного обхода дерева
+	DECLARE i INTEGER 1;
+	FOR child AS InputRef.*[] DO
+		IF CARDINALITY(child.*[]) = 0 THEN
+			CREATE FIELD OutputRef.*[i] NAME FIELDNAME(child);
+			SET OutputRef.*[i] = FIELDVALUE(InputRef.*[i]);
+		ELSE
+			CREATE FIELD OutputRef.*[i] NAME FIELDNAME(child);
+			CALL CopyBranch(child, OutputRef.*[i]);
+		END IF;
+		SET i = i + 1; 
+	END FOR;
+END;
+
+
+CREATE PROCEDURE AddErrorListToLastLog(
+IN  	_Environment REFERENCE,
+IN 		_InputExceptionList REFERENCE) BEGIN
+		-- прикрепляем дерево ошибок (процедура обходит его рекурсивно)
+		DECLARE num INTEGER CARDINALITY(_Environment.usr.logs.*[]);
+		CREATE FIELD _Environment.usr.logs.*[num].excList;
+		DECLARE lastLog REFERENCE TO _Environment.usr.logs.*[num].excList;
+		CALL CopyBranch(_InputExceptionList, lastLog);		
+END;	
+
+
+CREATE PROCEDURE addLogToEnvironment(
+IN ref REFERENCE,
+IN code INT,
+IN description CHAR,
+IN logType INTEGER,
+IN dateTime TIMESTAMP,
+IN msgBodyBlob BLOB) BEGIN
+	-- процедура добавления лога в локальное хранилище
+	IF NOT EXISTS(ref.log[]) THEN
+		CREATE FIRSTCHILD OF ref AS ref NAME 'log';
+	ELSE
+		CREATE LASTCHILD OF ref AS ref NAME 'log';
+	END IF;
+
+	SET ref.code = code;
+	SET ref.description = description;
+	SET ref.dateTime = dateTime;
+	SET ref.logType = logType;
+	SET ref.msgBody = msgBodyBlob;
+END;
+
+
+--CREATE PROCEDURE addErrLogToEnvironment(
+--IN ref REFERENCE,
+--IN code INT,
+--IN description CHAR,
+--IN logType INTEGER,
+--IN dateTime TIMESTAMP,
+--IN errBlob BLOB,
+--IN msgBodyBlob BLOB) BEGIN
+--	CALL addLogToEnvironment(ref,code,description, logType, dateTime, msgBodyBlob);
+--	MOVE ref LASTCHILD;
+--	SET ref.excList VALUE = errBlob;
+--	-- SET ref.excList VALUE = BASE64ENCODE(errBlob);
+--	SET ref.code = code;
+--	SET ref.description = description;
+--	SET ref.dateTime = dateTime;
+--	-- SET ref.msgBody = msgBodyBlob;
+--	-- SET ref.msgBody = BASE64ENCODE(msgBodyBlob);
+--END;
+
+
+
+CREATE FUNCTION AddInitialization(
+IN _Environment REFERENCE,
+IN _ModuleName CHARACTER,
+IN _QueueManagerName CHARACTER,
+IN _BrokerName CHARACTER,
+IN _ExecutionGroupName CHARACTER,
+IN _MessageFlowLabel CHARACTER)		
+BEGIN
+	-- запись начальной конфигурации (если она отсутствует)	
+	IF NOT EXISTS(_Environment.usr.logs[]) THEN
+		DECLARE messageIDTime CHAR CAST(CURRENT_GMTTIMESTAMP AS CHAR FORMAT 'yyyyMMddHHmmss');
+		SET _Environment.usr.logs VALUE = NULL;
+		SET _Environment.usr.logsCommonInfo.msgId = messageIDTime || ' MSG#1';
+		SET _Environment.usr.logsCommonInfo.moduleName = _ModuleName;		
+		SET _Environment.usr.logsCommonInfo.sender = _QueueManagerName 		|| '\' || 
+													_BrokerName 				|| '\' || 
+													_ExecutionGroupName 		|| '\' || 
+													_MessageFlowLabel;
+	END IF;	
+END;
+
+
+CREATE FUNCTION AddLogSection(
+IN _Environment REFERENCE,
+IN _Body REFERENCE,
+IN _AttachBody BOOLEAN,
+IN _LogLevel INTEGER,
+IN _LogDescription CHAR)		
+BEGIN
+	DECLARE msgBodyBlob BLOB NULL;
+	IF (_AttachBody) THEN
+	/*	SET msgBodyBlob = ASBITSTREAM(_Body); */
+		SET msgBodyBlob = ASBITSTREAM(_Body CCSID 1251);
+	END IF;	
+	CALL letobank.common.utils.addLogToEnvironment(_Environment.usr.logs, 0, _LogDescription, _LogLevel, CURRENT_TIMESTAMP, msgBodyBlob);
+END;
+
+
+
+
+
+CREATE PROCEDURE getExceptionInfo(INOUT ref REFERENCE, OUT code INT, OUT descr CHAR)
+BEGIN
+	WHILE (FIELDNAME(ref) <> 'Insert')AND(LASTMOVE(ref)) DO
+		MOVE ref LASTCHILD;
+	END WHILE;
+
+	SET descr = FIELDVALUE(ref.Text);
+
+	MOVE ref PREVIOUSSIBLING;
+	IF CAST(FIELDVALUE(ref) AS CHAR) = 'User exception thrown by throw node' THEN
+		MOVE ref PREVIOUSSIBLING;
+		SET code = CAST(FIELDVALUE(ref) AS INT);
+		MOVE ref NEXTSIBLING;
+
+		MOVE ref NEXTSIBLING;
+		SET descr = FIELDVALUE(ref.Text);
+	ELSE
+		MOVE ref NEXTSIBLING;
+		SET descr = '';
+		WHILE (FIELDNAME(ref) = 'Insert')AND(LASTMOVE(ref)) DO
+			SET descr = descr || FIELDVALUE(ref.Text) || ' | ';
+			MOVE ref PREVIOUSSIBLING;
+		END WHILE;
+		MOVE ref PARENT;
+		SET descr = FIELDVALUE(ref.Text) || ' | ' || descr;
+		SET code = CAST(FIELDVALUE(ref.Number) AS INT);
+	END IF;
+END;	

@@ -1,0 +1,11 @@
+BROKER SCHEMA letobank.srvbrpos.v1.adp
+
+
+CREATE DATABASE MODULE CreateErrorCode_Database
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		RETURN TRUE;
+	END;
+
+END MODULE;

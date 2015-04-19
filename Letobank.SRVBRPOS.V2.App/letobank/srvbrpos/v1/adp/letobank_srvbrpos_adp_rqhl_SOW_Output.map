@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="letobank.srvbrpos.v1.adp" version="8.0.4.0" xmlns:map="letobank.srvbrpos.v1.adp">
+    <input path="/CustomUI.xsd"/>
+    <output path="/CustomUI.xsd"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="letobank_srvbrpos_adp_rqhl_SOW_Output">
+        <input namespace="http://siebel.com/CustomUI" path="mb:msg(scoreOptyWeb_Output,assembly,XMLNSC,Properties)"/>
+        <output namespace="http://siebel.com/CustomUI" path="mb:msg(scoreOptyWeb_Output,assembly,XMLNSC,Properties)"/>
+        <move>
+            <input path="Properties"/>
+            <output path="Properties"/>
+        </move>
+        <move>
+            <input path="scoreOptyWeb_Output"/>
+            <output path="scoreOptyWeb_Output"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

@@ -1,0 +1,43 @@
+BROKER SCHEMA letobank.common.utils.logging
+
+DECLARE attachBody 			EXTERNAL BOOLEAN false;
+DECLARE logLevel 			EXTERNAL INT 0;  
+DECLARE logMessage 			EXTERNAL CHAR 'not defined';	
+DECLARE moduleName 			EXTERNAL CHAR 'not defined';
+DECLARE isErrorLog 			EXTERNAL BOOLEAN false;
+
+CREATE DATABASE MODULE AddLog_AddLog
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		-- инициализация окружения (если уже инициализировано, процедура ничего не сделает)
+		CALL letobank.common.utils.AddInitialization(Environment,
+													moduleName,
+													QueueManagerName,
+													BrokerName,
+													ExecutionGroupName,
+													MessageFlowLabel); 
+		-- логируем сообщение 
+		CALL letobank.common.utils.AddLogSection(Environment,
+												 	Body,
+												 	attachBody,
+												 	logLevel,
+												 	logMessage);
+		-- направляем сообщение на запись в последний лог информации об ошибке (если это требуется)
+		IF isErrorLog THEN
+			PROPAGATE TO TERMINAL 'out1';
+		ELSE
+			PROPAGATE TO TERMINAL 'out';
+		END IF;											  
+		RETURN FALSE;
+	END;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+END MODULE;

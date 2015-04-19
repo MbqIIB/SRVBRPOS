@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="letobank.srvbrch.v1.adp" version="8.0.4.0" xmlns:map="letobank.srvbrch.v1.adp">
+    <input path="/ATC_Broker_Application_PF.xsd"/>
+    <output path="/ATC_Broker_Application_PF.xsd"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="getDocs_Input_Message_Mapping">
+        <input namespace="http://www.siebel.com/xml/ATC%20Broker%20Application%20PF" path="mb:msg(getDocs_Input,assembly,XMLNSC,Properties)"/>
+        <output namespace="http://www.siebel.com/xml/ATC%20Broker%20Application%20PF" path="mb:msg(getDocs_Input,assembly,XMLNSC,Properties)"/>
+        <move>
+            <input path="Properties"/>
+            <output path="Properties"/>
+        </move>
+        <move>
+            <input path="getDocs_Input"/>
+            <output path="getDocs_Input"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

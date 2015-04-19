@@ -1,0 +1,35 @@
+BROKER SCHEMA letobank.srvbrpos.v1.adp
+
+
+CREATE COMPUTE MODULE restoreRFH2usr
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		IF (NOT EXISTS(OutputRoot.MQMD[])) THEN
+			CREATE NEXTSIBLING OF OutputRoot.Properties DOMAIN('MQMD');
+		END IF;
+		
+		IF (NOT EXISTS(OutputRoot.MQRFH2[])) THEN
+			CREATE NEXTSIBLING OF OutputRoot.MQMD DOMAIN('MQRFH2');
+			SET OutputRoot.MQRFH2.(MQRFH2.Field)Format = MQFMT_STRING;
+			END IF;	
+		CREATE FIELD OutputRoot.MQRFH2.usr;
+		SET OutputRoot.MQRFH2.usr = NULL;
+		SET OutputRoot.MQRFH2.usr = Environment.usr.rfh2.usr;
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

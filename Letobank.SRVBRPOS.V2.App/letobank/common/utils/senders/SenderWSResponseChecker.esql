@@ -1,0 +1,12 @@
+BROKER SCHEMA letobank.common.utils.senders
+
+
+
+CREATE DATABASE MODULE SenderWSResponseChecker
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET Environment.usr.sender.sended = true;
+		RETURN TRUE;
+	END;
+
+END MODULE;

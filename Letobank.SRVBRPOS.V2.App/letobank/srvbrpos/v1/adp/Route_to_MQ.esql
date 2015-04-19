@@ -1,0 +1,11 @@
+BROKER SCHEMA letobank.srvbrpos.v1.adp
+
+
+CREATE DATABASE MODULE Route_to_MQ
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		propagate TO LABEL  'SendToMQ'; 
+		RETURN TRUE;
+	END;
+
+END MODULE;

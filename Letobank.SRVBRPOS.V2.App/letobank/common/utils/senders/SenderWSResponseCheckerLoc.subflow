@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmDatabase.msgnode="ComIbmDatabase.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:letobank_common_utils_logging_AddLog.subflow="letobank/common/utils/logging/AddLog.subflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="letobank/common/utils/senders/SenderWSResponseCheckerLoc.subflow"
+    nsPrefix="letobank_common_utils_senders_SenderWSResponseCheckerLoc.subflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1" useDefaults="true" udpSupport="true">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.moduleName" name="moduleName" lowerBound="1" defaultValueLiteral="BRPOS">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <translation xmi:type="utility:TranslatableString" key="SenderWSResponseCheckerLoc" bundleName="letobank/common/utils/senders/SenderWSResponseCheckerLoc" pluginId="Letobank.SRVBRPOS.V1.App"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Letobank.SRVBRPOS.V1.App/icons/full/obj16/SenderWSResponseCheckerLoc.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/Letobank.SRVBRPOS.V1.App/icons/full/obj30/SenderWSResponseCheckerLoc.gif"/>
+    <composition>
+      <nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input" location="10,20">
+        <translation xmi:type="utility:TranslatableString" key="InTerminal.Failure" bundleName="letobank/common/utils/senders/SenderWSResponseCheckerLoc" pluginId="Letobank.SRVBRPOS.V1.App"/>
+      </nodes>
+      <nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output" location="285,92">
+        <translation xmi:type="utility:TranslatableString" key="OutTerminal.Output" bundleName="letobank/common/utils/senders/SenderWSResponseCheckerLoc" pluginId="Letobank.SRVBRPOS.V1.App"/>
+      </nodes>
+      <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="93,91" statement="esql://routine/letobank.common.utils.senders#SenderWSResponseChecker.Main">
+        <translation xmi:type="utility:ConstantString" string="Successfully sended (set flag)"/>
+      </nodes>
+      <nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input1" location="10,91">
+        <translation xmi:type="utility:TranslatableString" key="InTerminal.Out" bundleName="letobank/common/utils/senders/SenderWSResponseCheckerLoc" pluginId="Letobank.SRVBRPOS.V1.App"/>
+      </nodes>
+      <nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input2" location="10,162">
+        <translation xmi:type="utility:TranslatableString" key="InTerminal.Fault" bundleName="letobank/common/utils/senders/SenderWSResponseCheckerLoc" pluginId="Letobank.SRVBRPOS.V1.App"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_4" location="106,162" attachBody="true" logLevel="1" logMessage="ESB processing warning. recieved fault">
+        <translation xmi:type="utility:ConstantString" string="WarnLog: Fault recieved"/>
+      </nodes>
+      <nodes xmi:type="letobank_common_utils_logging_AddLog.subflow:FCMComposite_1" xmi:id="FCMComposite_1_5" location="107,20" logLevel="1" logMessage="ESB processing warning.">
+        <translation xmi:type="utility:ConstantString" string="WarnLog: Sending failed"/>
+      </nodes>
+      <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="258,162" statement="esql://routine/letobank.common.utils.senders#SenderWSRespFault.Main">
+        <translation xmi:type="utility:ConstantString" string="SenderWSRespFault"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_3" sourceNode="InTerminal.Input1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="OutTerminal.Output" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_5" sourceNode="InTerminal.Input" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_4" sourceNode="InTerminal.Input2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Ввод"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_6" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_4" sourceTerminalName="OutTerminal.Вывод" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="Group.LogSettings" configurable="true" userDefined="true" describedAttribute="Property.moduleName">
+        <propertyName xmi:type="utility:TranslatableString" key="Property.moduleName" bundleName="letobank/common/utils/logging/AddLog" pluginId="Letobank.COMMON.V2.Lib"/>
+      </propertyDescriptor>
+    </propertyOrganizer>
+    <attributeLinks promotedAttribute="Property.moduleName" overriddenNodes="FCMComposite_1_4 FCMComposite_1_5">
+      <overriddenAttribute href="letobank/common/utils/logging/AddLog.subflow#Property.moduleName"/>
+    </attributeLinks>
+    <stickyBoard/>
+  </eClassifiers>
+</ecore:EPackage>

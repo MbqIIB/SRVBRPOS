@@ -1,0 +1,17 @@
+BROKER SCHEMA letobank.srvbrpos.v1.srv
+
+
+CREATE COMPUTE MODULE letobank_srvbrpos_v1_srv_rqhl_TimeOut_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+--		DECLARE soapenv NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+--		CREATE LASTCHILD OF OutputRoot DOMAIN ('XMLNSC');
+--		SET OutputRoot.XMLNSC.soapenv:Fault.(XMLNSC.NamespaceDecl)xmlns:soapenv = soapenv;
+--		SET OutputRoot.XMLNSC.soapenv:Fault.faultcode = 'soapenv:Server';
+--		SET OutputRoot.XMLNSC.soapenv:Fault.faultstring = 'Server timeout. By some reasons the server can not process request in time';
+		CALL letobank.common.utils.senders.createErrorMesg(InputRoot, OutputRoot, 'request', 'WSTimeoutException', 201, 'Сервис недоступен, повторите попытку позднее');		
+		SET OutputLocalEnvironment = InputLocalEnvironment;	
+		RETURN TRUE;
+	END;
+
+END MODULE;

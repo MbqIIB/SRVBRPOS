@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="letobank.srvbrch.v1.adp" version="8.0.4.0" xmlns:map="letobank.srvbrch.v1.adp">
+    <input path="/CustomUI.xsd"/>
+    <output path="/CustomUI.xsd"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="docsSigned_Input_Message_Mapping">
+        <input namespace="http://siebel.com/CustomUI" path="mb:msg(docsSigned_Input,assembly,XMLNSC,Properties)"/>
+        <output namespace="http://siebel.com/CustomUI" path="mb:msg(docsSigned_Input,assembly,XMLNSC,Properties)"/>
+        <move>
+            <input path="Properties"/>
+            <output path="Properties"/>
+        </move>
+        <move>
+            <input path="docsSigned_Input"/>
+            <output path="docsSigned_Input"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

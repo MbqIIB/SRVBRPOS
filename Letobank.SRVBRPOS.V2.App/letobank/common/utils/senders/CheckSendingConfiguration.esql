@@ -1,0 +1,54 @@
+BROKER SCHEMA letobank.common.utils.senders
+
+
+
+DECLARE Retry SHARED INTEGER 0;
+DECLARE Delay SHARED INTEGER 0;
+
+CREATE FILTER MODULE CheckSendingConfiguration_CheckCache
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		IF Retry <> 0 AND Delay <> 0 THEN
+			SET Environment.usr.sender.retry = Retry;
+			SET Environment.usr.sender.delay = Delay;
+			RETURN TRUE;
+		ELSE 
+			RETURN FALSE;
+		END IF;
+	END;
+END MODULE;
+
+
+DECLARE DEFAULT_RETRY EXTERNAL INTEGER 0;
+DECLARE DEFAULT_DELAY EXTERNAL INTEGER 0;
+
+CREATE DATABASE MODULE CheckSendingConfiguration_UseDefaultsValues
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET Environment.usr.sender.retry = DEFAULT_RETRY;
+		SET Environment.usr.sender.delay = DEFAULT_DELAY;
+		RETURN TRUE;
+	END;
+
+END MODULE;
+
+DECLARE srvName EXTERNAL CHAR 'Parameter not defined in esql.';
+DECLARE dbSource EXTERNAL CHARACTER 'Parameter not defined in esql.' ;
+DECLARE tableConfigsName EXTERNAL CHARACTER 'Parameter not defined in esql.';
+
+CREATE DATABASE MODULE CheckSendingConfiguration_UpdateCache
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE query CHAR 'SELECT * FROM '||tableConfigsName||' WHERE SRVNAME='''||srvName||''' ;' ;
+		DECLARE CACHE_ROUTE_TABLE ROW ROW(PASSTHRU(query TO Database.{dbSource} ) AS parameter);
+		IF EXISTS(CACHE_ROUTE_TABLE.parameter[]) THEN
+			SET Retry = CACHE_ROUTE_TABLE.parameter.RETRY;
+			SET Delay = CACHE_ROUTE_TABLE.parameter.DELAY;
+			RETURN TRUE;
+		ELSE 
+			PROPAGATE TO TERMINAL 'out1';
+			RETURN FALSE;
+		END IF;
+	END;
+
+END MODULE;

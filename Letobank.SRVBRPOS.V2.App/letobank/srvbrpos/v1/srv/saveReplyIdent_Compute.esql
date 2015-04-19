@@ -1,0 +1,51 @@
+BROKER SCHEMA letobank.srvbrpos.v1.srv
+
+CREATE COMPUTE MODULE saveReplyIdent_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		CALL CopyMessageHeaders();
+		CALL CopyEntireMessage();
+		--SET Environment.usr.headers.replyident = InputLocalEnvironment.Destination.SOAP.Reply.ReplyIdentifier;
+		CALL AddMQRFH2(InputRoot, OutputRoot);
+		CALL AddTypeMetodToMQRFH2(OutputRoot);
+		RETURN TRUE;
+	END;
+	
+	CREATE PROCEDURE AddTypeMetodToMQRFH2 ( IN outMesg REFERENCE)
+	BEGIN
+		DECLARE operRef REFERENCE TO InputRoot.XMLNSC;
+		MOVE operRef LASTCHILD;
+		DECLARE oper CHARACTER FIELDNAME(operRef);
+		IF (oper = 'docsSignedRequest') OR (oper='offerCancelledRequest') THEN
+			SET outMesg.MQRFH2.usr.typeMetod = 'change';
+		ELSE
+			SET outMesg.MQRFH2.usr.typeMetod = 'request';
+		END IF;
+	END;
+	
+	CREATE PROCEDURE AddMQRFH2(IN inMesg REFERENCE, IN outMesg REFERENCE)
+	BEGIN
+		--  добавить в сообщение служебный заголовок MQRFH2
+		CREATE NEXTSIBLING OF outMesg.Properties DOMAIN ('MQMD') NAME 'MQMD';  
+		CREATE NEXTSIBLING OF outMesg.MQMD DOMAIN ('MQRFH2') NAME 'MQRFH2';   
+		SET outMesg.MQRFH2.(MQRFH2.Field)Format = 'MQSTR';
+		SET outMesg.MQRFH2.(MQRFH2.Field)NameValueCCSID = 1208;
+		SET outMesg.MQRFH2.(MQRFH2.Field)Version = MQRFH_VERSION_2;
+
+		SET outMesg.MQRFH2.usr.headers.replyident = InputLocalEnvironment.Destination.SOAP.Reply.ReplyIdentifier;
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

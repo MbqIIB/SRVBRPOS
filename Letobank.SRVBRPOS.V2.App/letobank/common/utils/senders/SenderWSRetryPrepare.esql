@@ -1,0 +1,26 @@
+BROKER SCHEMA letobank.common.utils.senders
+
+
+CREATE COMPUTE MODULE SenderRetryPrepare
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		DECLARE attemptCount INT 0;
+		SET Environment.usr.sender.sended = false;
+		resendLoop: WHILE (attemptCount = 0 OR 
+					(Environment.usr.sender.retry >= attemptCount 
+					AND 
+					NOT(Environment.usr.sender.sended))) DO
+			IF attemptCount > 0 THEN
+				DECLARE returnValue BOOLEAN SLEEP(Environment.usr.sender.delay * 1000);
+			END IF;
+			SET attemptCount = attemptCount + 1;
+			PROPAGATE TO TERMINAL 'out' DELETE NONE;
+		END WHILE;		
+		IF NOT(Environment.usr.sender.sended) THEN
+				THROW USER EXCEPTION VALUES('90000', 'Destination unavailable. Attempts exhausted.');
+			END IF;
+		RETURN FALSE;
+	END;
+END MODULE;
+

@@ -1,0 +1,5 @@
+BROKER SCHEMA letobank.srvbrpos.v1.adp
+
+
+DECLARE parseExceptionCode SHARED INTEGER 102;
+DECLARE siebelExceptionCode SHARED INTEGER 104;

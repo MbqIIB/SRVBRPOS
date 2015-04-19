@@ -1,0 +1,18 @@
+BROKER SCHEMA letobank.srvbrpos.v1.srv
+
+
+CREATE COMPUTE MODULE letobank_srvbrpos_v1_srv_rqhl_Catch_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+	/*	DECLARE soapenv NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+		CREATE LASTCHILD OF OutputRoot DOMAIN ('XMLNSC');
+		SET OutputRoot.XMLNSC.soapenv:Fault.(XMLNSC.NamespaceDecl)xmlns:soapenv = soapenv;
+		SET OutputRoot.XMLNSC.soapenv:Fault.faultcode = 'soapenv:Server';
+		SET OutputRoot.XMLNSC.soapenv:Fault.faultstring = 'Internal server error has occurred';
+	*/
+		CALL letobank.common.utils.senders.createErrorMesg(InputRoot, OutputRoot, 'request', 'WSTechnicalException', 101, 'Техническая ошибка. Сервис Кредитный брокер недоступен. Обратитесь в техническую поддержку');		
+		SET OutputLocalEnvironment = InputLocalEnvironment;	
+		RETURN TRUE;
+	END;
+
+END MODULE;

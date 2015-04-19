@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://siebel.com/CustomUI" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:xsdLocal1="http://www.siebel.com/xml/ATC%20Opportunity%20POS" xmlns:xsdLocal2="http://www.siebel.com/xml/ATC%20Broker%20Confirm%20Offer">
+    <xsd:import namespace="http://www.siebel.com/xml/ATC%20Opportunity%20POS" schemaLocation="ATC_Opportunity_POS.xsd"/>
+    <xsd:import namespace="http://www.siebel.com/xml/ATC%20Broker%20Confirm%20Offer" schemaLocation="ATC_Broker_Confirm_Offer.xsd"/>
+    <xsd:element ibmSchExtn:docRoot="true" name="checkScoreResult_Input">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ApplicationId" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="checkScoreResult_Output">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="CreditAmount" type="xsd:string"/>
+                <xsd:element name="CreditPercent" type="xsd:string"/>
+                <xsd:element name="CreditRate" type="xsd:string"/>
+                <xsd:element name="CreditSumm" type="xsd:string"/>
+                <xsd:element name="CreditTerm" type="xsd:string"/>
+                <xsd:element name="DecisionCode" type="xsd:string"/>
+                <xsd:element name="ErrorCode" type="xsd:string"/>
+                <xsd:element name="ErrorMessage" type="xsd:string"/>
+                <xsd:element name="InitPayment" type="xsd:string"/>
+                <xsd:element name="InsureMonthPayment" type="xsd:string"/>
+                <xsd:element name="InteractionId" type="xsd:string"/>
+                <xsd:element name="NoInsureMonthPayment" type="xsd:string"> </xsd:element>
+                <xsd:element name="TotalMonthPayment" type="xsd:string"/>
+                <xsd:element name="TotalInsuranceAmount" type="xsd:string"/>
+                <xsd:element name="ProductName" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="scoreOptyWeb_Input">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="xsdLocal1:createApplication"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:element ibmSchExtn:docRoot="true" name="scoreOptyWeb_Output">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ErrorCode" type="xsd:string"/>
+                <xsd:element name="ErrorMessage" type="xsd:string"/>
+                <xsd:element name="sApplicationId" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="scoreOpty_Input">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="xsdLocal1:ListOfApplicationPos"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="scoreOpty_Output">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ApplicationId" type="xsd:string"/>
+                <xsd:element name="ErrorCode" type="xsd:string"/>
+                <xsd:element name="ErrorMessage" type="xsd:string"/>
+                <xsd:element name="InteractionId" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="confirmOffer_Input">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="xsdLocal2:ListOfBrokerConfirmOffer"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="confirmOffer_Output">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ErrorCode" type="xsd:string"/>
+                <xsd:element name="ErrorMessage" type="xsd:string"/>
+                <xsd:element name="InteractionId" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="docsSigned_Input">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="xsdLocal2:ListOfBrokerConfirmOffer"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="docsSigned_Output">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ErrorCode" type="xsd:string"/>
+                <xsd:element name="ErrorMessage" type="xsd:string"/>
+                <xsd:element name="InteractionId" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="offerCancelled_Input">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ApplicationId" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="offerCancelled_Output">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ErrorCode" type="xsd:string"/>
+                <xsd:element name="ErrorMessage" type="xsd:string"/>
+                <xsd:element name="InteractionId" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="checkStatus_Input">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ApplicationId" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element ibmSchExtn:docRoot="true" name="checkStatus_Output">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="CheckResult" type="xsd:string"/>
+                <xsd:element name="ErrorCode" type="xsd:string"/>
+                <xsd:element name="ErrorMessage" type="xsd:string"/>
+                <xsd:element name="InteractionId" type="xsd:string"/>
+                <xsd:element ref="xsdLocal1:ListOfScanError"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

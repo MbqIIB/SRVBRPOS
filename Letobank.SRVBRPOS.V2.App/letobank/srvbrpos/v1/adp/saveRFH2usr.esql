@@ -1,0 +1,12 @@
+BROKER SCHEMA letobank.srvbrpos.v1.adp
+
+
+CREATE DATABASE MODULE saveRFH2usr
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+	--	SET Environment.usr.rfh2.usr = Root.MQRFH2.usr;
+		SET Environment.usr.rfh2.usr = Root.MQRFH2.usr;
+		RETURN TRUE;
+	END;
+
+END MODULE;
