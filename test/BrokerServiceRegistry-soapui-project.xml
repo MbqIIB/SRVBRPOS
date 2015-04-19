@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="BrokerServiceRegistry" resourceRoot="" soapui-version="4.5.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ATC_spcCreate_spcApplication" type="wsdl" bindingName="{http://siebel.com/CustomUI}ATC_spcCreate_spcApplication" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/Vladimir/OneDrive/esb/BR/BrokerServiceRegistry.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/Vladimir/OneDrive/esb/BR/BrokerServiceRegistry.wsdl"><con:part><con:url>file:/C:/Users/Vladimir/OneDrive/esb/BR/BrokerServiceRegistry.wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="http://siebel.com/CustomUI" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsdLocal1="http://www.siebel.com/xml/ATC%20Opportunity%20POS" xmlns:xsdLocal2="http://www.siebel.com/xml/ATC%20Broker%20Application%20PF" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://siebel.com/CustomUI">
+  <types>
+    <xsd:schema targetNamespace="http://siebel.com/CustomUI" elementFormDefault="qualified">
+      <xsd:include schemaLocation="CustomUI.xsd"/>
+      <xsd:import namespace="http://www.siebel.com/xml/ATC%20Opportunity%20POS" schemaLocation="ATC_Opportunity_POS.xsd"/>
+      <xsd:import namespace="http://www.siebel.com/xml/ATC%20Broker%20Application%20PF" schemaLocation="ATC_Broker_Application_PF.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="scoreOptyWeb_Input">
+    <part name="scoreOptyWeb_Input" element="tns:scoreOptyWeb_Input"/>
+  </message>
+  <message name="scoreOptyWeb_Output">
+    <part name="scoreOptyWeb_Output" element="tns:scoreOptyWeb_Output"/>
+  </message>
+  <message name="scoreOpty_Input">
+    <part name="scoreOpty_Input" element="tns:scoreOpty_Input"/>
+  </message>
+  <message name="scoreOpty_Output">
+    <part name="scoreOpty_Output" element="tns:scoreOpty_Output"/>
+  </message>
+  <message name="checkScoreResult_Input">
+    <part name="checkScoreResult_Input" element="tns:checkScoreResult_Input"/>
+  </message>
+  <message name="checkScoreResult_Output">
+    <part name="checkScoreResult_Output" element="tns:checkScoreResult_Output"/>
+  </message>
+  <message name="getDocs_Input">
+    <part name="getDocs_Input" element="xsdLocal2:getDocs_Input"/>
+  </message>
+  <message name="getDocs_Output">
+    <part name="getDocs_Output" element="xsdLocal2:getDocs_Output"/>
+  </message>
+  <message name="confirmOffer_Input">
+    <part name="confirmOffer_Input" element="tns:confirmOffer_Input"/>
+  </message>
+  <message name="confirmOffer_Output">
+    <part name="confirmOffer_Output" element="tns:confirmOffer_Output"/>
+  </message>
+  <message name="docsSigned_Input">
+    <part name="docsSigned_Input" element="tns:docsSigned_Input"/>
+  </message>
+  <message name="docsSigned_Output">
+    <part name="docsSigned_Output" element="tns:docsSigned_Output"/>
+  </message>
+  <message name="offerCancelled_Input">
+    <part name="offerCancelled_Input" element="tns:offerCancelled_Input"/>
+  </message>
+  <message name="offerCancelled_Output">
+    <part name="offerCancelled_Output" element="tns:offerCancelled_Output"/>
+  </message>
+  <message name="checkStatus_Input">
+    <part name="checkStatus_Input" element="tns:checkStatus_Input"/>
+  </message>
+  <message name="checkStatus_Output">
+    <part name="checkStatus_Output" element="tns:checkStatus_Output"/>
+  </message>
+  <portType name="WSBroker_POSPortType">
+    <operation name="scoreOptyWeb">
+      <input message="tns:scoreOptyWeb_Input"/>
+      <output message="tns:scoreOptyWeb_Output"/>
+    </operation>
+    <operation name="scoreOpty">
+      <input message="tns:scoreOpty_Input"/>
+      <output message="tns:scoreOpty_Output"/>
+    </operation>
+    <operation name="checkScoreResult">
+      <input message="tns:checkScoreResult_Input"/>
+      <output message="tns:checkScoreResult_Output"/>
+    </operation>
+    <operation name="getDocs">
+      <input message="tns:getDocs_Input"/>
+      <output message="tns:getDocs_Output"/>
+    </operation>
+    <operation name="confirmOffer">
+      <input message="tns:confirmOffer_Input"/>
+      <output message="tns:confirmOffer_Output"/>
+    </operation>
+    <operation name="docsSigned">
+      <input message="tns:docsSigned_Input"/>
+      <output message="tns:docsSigned_Output"/>
+    </operation>
+    <operation name="offerCancelled">
+      <input message="tns:offerCancelled_Input"/>
+      <output message="tns:offerCancelled_Output"/>
+    </operation>
+    <operation name="checkStatus">
+      <input message="tns:checkStatus_Input"/>
+      <output message="tns:checkStatus_Output"/>
+    </operation>
+  </portType>
+  <binding name="ATC_spcCreate_spcApplication" type="tns:WSBroker_POSPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="scoreOptyWeb">
+      <soap:operation soapAction="document/http://siebel.com/CustomUI:scoreOptyWeb"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="scoreOpty">
+      <soap:operation soapAction="document/http://siebel.com/CustomUI:scoreOpty"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="checkScoreResult">
+      <soap:operation soapAction="document/http://siebel.com/CustomUI:checkScoreResult"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getDocs">
+      <soap:operation soapAction="document/http://siebel.com/CustomUI:getDocs"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="confirmOffer">
+      <soap:operation soapAction="document/http://siebel.com/CustomUI:confirmOffer"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="docsSigned">
+      <soap:operation soapAction="document/http://siebel.com/CustomUI:docsSigned"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="offerCancelled">
+      <soap:operation soapAction="document/http://siebel.com/CustomUI:offerCancelled"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="checkStatus">
+      <soap:operation soapAction="document/http://siebel.com/CustomUI:checkStatus"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ATC_spcCreate_spcApplication">
+    <port binding="tns:ATC_spcCreate_spcApplication" name="ATC_spcCreate_spcApplication">
+      <soap:address location="https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\Vladimir\OneDrive\esb\BR\ATC_Opportunity_POS.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.siebel.com/xml/ATC%20Opportunity%20POS" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.siebel.com/xml/ATC%20Opportunity%20POS" xmlns:xsdLocal1="http://www.siebel.com/xml/ATC%20Opportunity%20POS">
+  <xsd:complexType name="createApplication">
+    <xsd:sequence>
+      <xsd:element name="Application" maxOccurs="unbounded" minOccurs="0" type="Application"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Application">
+    <xsd:sequence>
+      <xsd:element name="Type" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ProductCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Product2Code" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="TermCredit" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AmountCredit" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AnnualPayment" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="FirstPayment" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="InsuranceForm" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="InsuranceType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="CardType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="PersonalElectronicSignature" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Channel" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="PathCode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="TtCode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ToCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="TtAddress" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="TtRegionCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AgentLastName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AgentFirstName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AgentMiddleName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AgentPassportSeria" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AgentPassportNumber" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AgentAgreeName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="BrokerId" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="BrokerAgentId" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ApplWebId" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="EstablishWay" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="WebAddress" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AttractionSource" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="WebCampContent" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="WebCampKeyWord" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="WebCampType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AdverisingCampaign" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="UserIP" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="PageURL" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="CompLocalTime" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Device" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="OperSystem" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Browser" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="BrowserLang" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="ScreenDef" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="DeliveryOrgCode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="DeliveryAddress" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ApplicationId" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Contact" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:ContactWeb"/>
+      <xsd:element name="Goods" maxOccurs="unbounded" minOccurs="0" type="GoodsWeb"/>
+      <xsd:element name="ApplicationAttachment" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:ApplicationAttachment"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Contact">
+    <xsd:sequence>
+      <xsd:element name="AddressStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="AnswerSecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="BirthDate" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="BirthPlace" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ChangeLastNameFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Citizenship" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Education" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="EmailAddress" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Ipdl" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="FirstName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="LastName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Gender" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="MaritalStatus" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="MiddleName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="MonthFamilyExpenses" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="MonthFamilyIncome" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="MonthPersonalIncome" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="NumberChild" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="NumberDepend" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="PrevLastName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="SecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="SocialStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="VisualAssesCode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ListOfAddress" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfAddress"/>
+      <xsd:element name="ListOfAsset" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfAsset"/>
+      <xsd:element name="ListOfPhone" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfPhone"/>
+      <xsd:element name="ListOfContactEmployment" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfContactEmploymentWeb"/>
+      <xsd:element name="ListOfContactCredential" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfContactCredential"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ContactWeb">
+    <xsd:sequence>
+      <xsd:element name="AddressStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="AnswerSecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="BirthDate" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="BirthPlace" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ChangeLastNameFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Citizenship" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Education" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="EmailAddress" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Ipdl" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="FirstName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="LastName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Gender" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="MaritalStatus" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="MiddleName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="MonthFamilyExpenses" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="MonthFamilyIncome" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="MonthPersonalIncome" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="NumberChild" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="NumberDepend" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="PrevLastName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="SecurityQuestion" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="SocialStatus" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="VisualAssesCode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ListOfAddress" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfAddressWeb"/>
+      <xsd:element name="ListOfAsset" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfAsset"/>
+      <xsd:element name="ListOfPhone" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfPhone"/>
+      <xsd:element name="ListOfContactEmployment" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfContactEmploymentWeb"/>
+      <xsd:element name="ListOfContactCredential" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfContactCredential"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GoodsWeb">
+    <xsd:sequence>
+      <xsd:element name="Code" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Mark" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Model" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Quantity" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Price" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="OptyId" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Goods">
+    <xsd:sequence>
+      <xsd:element name="Group" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Mark" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Model" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Name" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Price" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Quantity" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ApplicationAttachment">
+    <xsd:sequence>
+      <xsd:element name="OpptyFileName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="DocType" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="OpptyFileBuffer" maxOccurs="1" minOccurs="1" type="xsd:base64Binary"/>
+      <xsd:element name="OpptyFileExt" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="OpptyId" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressWeb">
+    <xsd:all>
+      <xsd:element name="KladrFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Zipcode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Country" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="PostAddressFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="LivingAddressFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="RegAddressFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="WorkAddressFlag" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="RegionCode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="District" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="DistrictType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="City" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="CityType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Subcity" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="SubcityType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Street" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="StreetType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="StreetKLADRCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="House" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="HouseKLADRCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Building" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Domain" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Housing" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Flat" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="KladrCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="RegDate" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="GniCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="Address">
+    <xsd:all>
+      <xsd:element name="KladrFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Zipcode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Country" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="PostAddressFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="LivingAddressFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="RegAddressFlag" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="RegionCode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="District" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="DistrictType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="City" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="CityType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Subcity" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="SubcityType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Street" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="StreetType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="StreetKLADRCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="House" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="HouseKLADRCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Building" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Domain" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Housing" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Flat" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="KladrCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="RegDate" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="GniCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="Asset">
+    <xsd:all>
+      <xsd:element name="AssetType" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="AutoMark" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AutoModel" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AutoIssueDate" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="Phone">
+    <xsd:all>
+      <xsd:element name="UseType" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="PhoneNumber" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="AddPhoneNum" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="ContactCredential">
+    <xsd:all>
+      <xsd:element name="Seria" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="Number" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="IssueBy" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="IssueDate" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="IssueByCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Category" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="createApplication" type="createApplication"/>
+  <xsd:element name="ListOfApplicationPos" type="xsdLocal1:ListOfApplicationPos"/>
+  <xsd:complexType name="ListOfApplicationPosTopElmt">
+    <xsd:sequence>
+      <xsd:element name="ListOfApplicationPos" maxOccurs="1" minOccurs="1" type="xsdLocal1:ListOfApplicationPos"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfApplicationPos">
+    <xsd:sequence>
+      <xsd:element name="ApplicationPos" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:ApplicationPos"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ApplicationPos">
+    <xsd:all>
+      <xsd:element name="AmountCredit" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AnnualPayment" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Channel" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="CurrencyCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="FirstPayment" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="InsuranceForm" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="TermCredit" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="ProductCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="TtCode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="AgentFirstName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AgentLastName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="AgentMiddleName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AgentPassportNumber" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="AgentPassportSeria" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="TtAddress" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="TtRegionCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="BrokerAgentId" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="BrokerId" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="ApplicationId" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="ToCode" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="PathCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="InsuranceCompanyName" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="ListOfContact" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfContact"/>
+      <xsd:element name="ListOfGoods" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfGoods"/>
+      <xsd:element name="ListOfOpportunityAttachment" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfOpportunityAttachment"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfContact">
+    <xsd:sequence>
+      <xsd:element name="Contact" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:Contact"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfGoods">
+    <xsd:sequence>
+      <xsd:element name="Goods" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:Goods"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfGoodsWeb">
+    <xsd:sequence>
+      <xsd:element name="Goods" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:GoodsWeb"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfOpportunityAttachment">
+    <xsd:sequence>
+      <xsd:element name="OpportunityAttachment" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:OpportunityAttachment"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OpportunityAttachment">
+    <xsd:sequence>
+      <xsd:element name="OpptyFileExt" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="OpptyFileName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="OpptyFileSrcType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="OpptyFileBuffer" maxOccurs="1" minOccurs="1" type="xsd:base64Binary"/>
+      <xsd:element name="DocType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfAddress">
+    <xsd:sequence>
+      <xsd:element name="Address" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:Address"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfAddressWeb">
+    <xsd:sequence>
+      <xsd:element name="Address" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:AddressWeb"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfAsset">
+    <xsd:sequence>
+      <xsd:element name="Asset" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:Asset"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfPhone">
+    <xsd:sequence>
+      <xsd:element name="Phone" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:Phone"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfContactEmployment">
+    <xsd:sequence>
+      <xsd:element name="ContactEmployment" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:ContactEmployment"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfContactEmploymentWeb">
+    <xsd:sequence>
+      <xsd:element name="ContactEmployment" maxOccurs="unbounded" minOccurs="0" type="ContactEmploymentWeb"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ContactEmployment">
+    <xsd:sequence>
+      <xsd:element name="ContactId" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="EmployeeNumber" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Employer" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="FioManager" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Industry" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Position" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="StartDate" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="WorkPhoneNumber" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="ListOfWorkAddress" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfWorkAddress"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ContactEmploymentWeb">
+    <xsd:sequence>
+      <xsd:element name="EmployeeNumber" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Employer" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="FioManager" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Industry" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Position" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="StartDate" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfContactCredential">
+    <xsd:sequence>
+      <xsd:element name="ContactCredential" maxOccurs="unbounded" minOccurs="1" type="xsdLocal1:ContactCredential"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfWorkAddress">
+    <xsd:sequence>
+      <xsd:element name="WorkAddress" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:WorkAddress"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="WorkAddress">
+    <xsd:sequence>
+      <xsd:element name="Building" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="City" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="CityType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Country" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="District" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="DistrictType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Domain" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Flat" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="House" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Housing" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="KladrCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="KladrFlag" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Region" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="RegionCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="RegionType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Street" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="StreetKLADRCode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="StreetType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Subcity" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="SubcityType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Zipcode" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ListOfScanError" type="xsdLocal1:ListOfScanError"/>
+  <xsd:complexType name="ListOfScanErrorTopElmt">
+    <xsd:sequence>
+      <xsd:element name="ListOfScanError" maxOccurs="1" minOccurs="1" type="xsdLocal1:ListOfScanError"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfScanError">
+    <xsd:sequence>
+      <xsd:element name="ScanError" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:ScanError"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ScanError">
+    <xsd:sequence>
+      <xsd:element name="ScanType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="Message" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Vladimir\OneDrive\esb\BR\ATC_Broker_Application_PF.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://www.siebel.com/xml/ATC%20Broker%20Application%20PF" xmlns:xsdLocal1="http://www.siebel.com/xml/ATC%20Broker%20Application%20PF" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation>Copyright (C) 2001-2004 Siebel Systems, Inc. All rights reserved. Siebel XSD
+            Generation</xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="getDocs_Input">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ApplicationId" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getDocs_Output">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="AccountNum" type="xsd:string"/>
+        <xsd:element name="AgreementNum" type="xsd:string"/>
+        <xsd:element name="CheckResult" type="xsd:string"/>
+        <xsd:element name="ErrorCode" type="xsd:string"/>
+        <xsd:element name="ErrorMessage" type="xsd:string"/>
+        <xsd:element name="InteractionId" type="xsd:string"/>
+        <xsd:element ref="xsdLocal1:ListOfBrokerApplicationPf"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ListOfBrokerApplicationPf" type="xsdLocal1:ListOfBrokerApplicationPf"/>
+  <xsd:complexType name="ListOfBrokerApplicationPfTopElmt">
+    <xsd:sequence>
+      <xsd:element name="ListOfBrokerApplicationPf" maxOccurs="1" minOccurs="1" type="xsdLocal1:ListOfBrokerApplicationPf"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfBrokerApplicationPf">
+    <xsd:sequence>
+      <xsd:element name="ApplicationPos" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:ApplicationPos"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ApplicationPos">
+    <xsd:sequence>
+      <xsd:element name="ApplicationId" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="ListOfOpportunityPf" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfOpportunityPf"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfOpportunityPf">
+    <xsd:sequence>
+      <xsd:element name="OpportunityPf" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:OpportunityPf"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OpportunityPf">
+    <xsd:sequence>
+      <xsd:element name="OpptyFileNamePF" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="OpptyFileSrcType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="OpptyFileBuffer" maxOccurs="1" minOccurs="0" type="xsd:base64Binary"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Vladimir\OneDrive\esb\BR\CustomUI.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://siebel.com/CustomUI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsdLocal1="http://www.siebel.com/xml/ATC%20Opportunity%20POS" xmlns:xsdLocal2="http://www.siebel.com/xml/ATC%20Broker%20Confirm%20Offer">
+  <xsd:import namespace="http://www.siebel.com/xml/ATC%20Opportunity%20POS" schemaLocation="ATC_Opportunity_POS.xsd"/>
+  <xsd:import namespace="http://www.siebel.com/xml/ATC%20Broker%20Confirm%20Offer" schemaLocation="ATC_Broker_Confirm_Offer.xsd"/>
+  <xsd:element name="checkScoreResult_Input">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ApplicationId" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="checkScoreResult_Output">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="CreditAmount" type="xsd:string"/>
+        <xsd:element name="CreditPercent" type="xsd:string"/>
+        <xsd:element name="CreditRate" type="xsd:string"/>
+        <xsd:element name="CreditSumm" type="xsd:string"/>
+        <xsd:element name="CreditTerm" type="xsd:string"/>
+        <xsd:element name="DecisionCode" type="xsd:string"/>
+        <xsd:element name="ErrorCode" type="xsd:string"/>
+        <xsd:element name="ErrorMessage" type="xsd:string"/>
+        <xsd:element name="InitPayment" type="xsd:string"/>
+        <xsd:element name="InsureMonthPayment" type="xsd:string"/>
+        <xsd:element name="InteractionId" type="xsd:string"/>
+        <xsd:element name="NoInsureMonthPayment" type="xsd:string"></xsd:element>
+        <xsd:element name="TotalMonthPayment" type="xsd:string"/>
+        <xsd:element name="TotalInsuranceAmount" type="xsd:string"/>
+        <xsd:element name="ProductName" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="scoreOptyWeb_Input">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="xsdLocal1:createApplication"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="scoreOptyWeb_Output">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ErrorCode" type="xsd:string"/>
+        <xsd:element name="ErrorMessage" type="xsd:string"/>
+        <xsd:element name="sApplicationId" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="scoreOpty_Input">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="xsdLocal1:ListOfApplicationPos"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="scoreOpty_Output">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ApplicationId" type="xsd:string"/>
+        <xsd:element name="ErrorCode" type="xsd:string"/>
+        <xsd:element name="ErrorMessage" type="xsd:string"/>
+        <xsd:element name="InteractionId" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="confirmOffer_Input">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="xsdLocal2:ListOfBrokerConfirmOffer"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="confirmOffer_Output">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ErrorCode" type="xsd:string"/>
+        <xsd:element name="ErrorMessage" type="xsd:string"/>
+        <xsd:element name="InteractionId" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="docsSigned_Input">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="xsdLocal2:ListOfBrokerConfirmOffer"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="docsSigned_Output">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ErrorCode" type="xsd:string"/>
+        <xsd:element name="ErrorMessage" type="xsd:string"/>
+        <xsd:element name="InteractionId" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="offerCancelled_Input">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ApplicationId" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="offerCancelled_Output">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ErrorCode" type="xsd:string"/>
+        <xsd:element name="ErrorMessage" type="xsd:string"/>
+        <xsd:element name="InteractionId" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="checkStatus_Input">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ApplicationId" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="checkStatus_Output">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="CheckResult" type="xsd:string"/>
+        <xsd:element name="ErrorCode" type="xsd:string"/>
+        <xsd:element name="ErrorMessage" type="xsd:string"/>
+        <xsd:element name="InteractionId" type="xsd:string"/>
+        <xsd:element ref="xsdLocal1:ListOfScanError"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\Vladimir\OneDrive\esb\BR\ATC_Broker_Confirm_Offer.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://www.siebel.com/xml/ATC%20Broker%20Confirm%20Offer" xmlns:xsdLocal1="http://www.siebel.com/xml/ATC%20Broker%20Confirm%20Offer" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation>Copyright (C) 2001-2004 Siebel Systems, Inc. All rights reserved. Siebel XSD
+            Generation</xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="ListOfBrokerConfirmOffer" type="xsdLocal1:ListOfBrokerConfirmOffer"/>
+  <xsd:complexType name="ListOfBrokerConfirmOfferTopElmt">
+    <xsd:sequence>
+      <xsd:element name="ListOfBrokerConfirmOffer" maxOccurs="1" minOccurs="1" type="xsdLocal1:ListOfBrokerConfirmOffer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfBrokerConfirmOffer">
+    <xsd:sequence>
+      <xsd:element name="ApplicationPos" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:ApplicationPos"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ApplicationPos">
+    <xsd:sequence>
+      <xsd:element name="PlannedDateDocSign" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="FIOEmpAgentAgreement" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="ApplicationId" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="ListOfOpportunityAttachment" maxOccurs="1" minOccurs="0" type="xsdLocal1:ListOfOpportunityAttachment"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListOfOpportunityAttachment">
+    <xsd:sequence>
+      <xsd:element name="OpportunityAttachment" maxOccurs="unbounded" minOccurs="0" type="xsdLocal1:OpportunityAttachment"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OpportunityAttachment">
+    <xsd:sequence>
+      <xsd:element name="Id" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="OpptyFileExt" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="OpptyFileName" maxOccurs="1" minOccurs="1" type="xsd:string"/>
+      <xsd:element name="OpptyFileSrcType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="OpptyFileBuffer" maxOccurs="1" minOccurs="0" type="xsd:base64Binary"/>
+      <xsd:element name="DocType" maxOccurs="1" minOccurs="0" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute</con:endpoint><con:endpoint>http://dc2-esbprod03:7180/eai_rus</con:endpoint></con:endpoints><con:operation isOneWay="false" action="document/http://siebel.com/CustomUI:checkScoreResult" name="checkScoreResult" bindingOperationName="checkScoreResult" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://dc2-esbprod03:7180/eai_rus</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:checkScoreResult_Input>
+         <cus:ApplicationId>10083550</cus:ApplicationId>
+      </cus:checkScoreResult_Input>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="document/http://siebel.com/CustomUI:checkScoreResult"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="document/http://siebel.com/CustomUI:checkStatus" name="checkStatus" bindingOperationName="checkStatus" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:checkStatus_Input>
+         <cus:ApplicationId>?</cus:ApplicationId>
+      </cus:checkStatus_Input>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="document/http://siebel.com/CustomUI:checkStatus"/></con:call></con:operation><con:operation isOneWay="false" action="document/http://siebel.com/CustomUI:confirmOffer" name="confirmOffer" bindingOperationName="confirmOffer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:atc="http://www.siebel.com/xml/ATC%20Broker%20Confirm%20Offer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:confirmOffer_Input>
+         <atc:ListOfBrokerConfirmOffer>
+            <!--Zero or more repetitions:-->
+            <atc:ApplicationPos>
+               <!--Optional:-->
+               <atc:PlannedDateDocSign>?</atc:PlannedDateDocSign>
+               <!--Optional:-->
+               <atc:FIOEmpAgentAgreement>?</atc:FIOEmpAgentAgreement>
+               <!--Optional:-->
+               <atc:ApplicationId>?</atc:ApplicationId>
+               <!--Optional:-->
+               <atc:ListOfOpportunityAttachment>
+                  <!--Zero or more repetitions:-->
+                  <atc:OpportunityAttachment>
+                     <!--Optional:-->
+                     <atc:Id>?</atc:Id>
+                     <!--Optional:-->
+                     <atc:OpptyFileExt>?</atc:OpptyFileExt>
+                     <atc:OpptyFileName>?</atc:OpptyFileName>
+                     <!--Optional:-->
+                     <atc:OpptyFileSrcType>?</atc:OpptyFileSrcType>
+                     <!--Optional:-->
+                     <atc:OpptyFileBuffer>cid:1060644315801</atc:OpptyFileBuffer>
+                     <!--Optional:-->
+                     <atc:DocType>?</atc:DocType>
+                  </atc:OpportunityAttachment>
+               </atc:ListOfOpportunityAttachment>
+            </atc:ApplicationPos>
+         </atc:ListOfBrokerConfirmOffer>
+      </cus:confirmOffer_Input>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="document/http://siebel.com/CustomUI:confirmOffer"/></con:call></con:operation><con:operation isOneWay="false" action="document/http://siebel.com/CustomUI:docsSigned" name="docsSigned" bindingOperationName="docsSigned" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:atc="http://www.siebel.com/xml/ATC%20Broker%20Confirm%20Offer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:docsSigned_Input>
+         <atc:ListOfBrokerConfirmOffer>
+            <!--Zero or more repetitions:-->
+            <atc:ApplicationPos>
+               <!--Optional:-->
+               <atc:PlannedDateDocSign>?</atc:PlannedDateDocSign>
+               <!--Optional:-->
+               <atc:FIOEmpAgentAgreement>?</atc:FIOEmpAgentAgreement>
+               <!--Optional:-->
+               <atc:ApplicationId>?</atc:ApplicationId>
+               <!--Optional:-->
+               <atc:ListOfOpportunityAttachment>
+                  <!--Zero or more repetitions:-->
+                  <atc:OpportunityAttachment>
+                     <!--Optional:-->
+                     <atc:Id>?</atc:Id>
+                     <!--Optional:-->
+                     <atc:OpptyFileExt>?</atc:OpptyFileExt>
+                     <atc:OpptyFileName>?</atc:OpptyFileName>
+                     <!--Optional:-->
+                     <atc:OpptyFileSrcType>?</atc:OpptyFileSrcType>
+                     <!--Optional:-->
+                     <atc:OpptyFileBuffer>cid:1248650847574</atc:OpptyFileBuffer>
+                     <!--Optional:-->
+                     <atc:DocType>?</atc:DocType>
+                  </atc:OpportunityAttachment>
+               </atc:ListOfOpportunityAttachment>
+            </atc:ApplicationPos>
+         </atc:ListOfBrokerConfirmOffer>
+      </cus:docsSigned_Input>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="document/http://siebel.com/CustomUI:docsSigned"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="document/http://siebel.com/CustomUI:getDocs" name="getDocs" bindingOperationName="getDocs" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:atc="http://www.siebel.com/xml/ATC%20Broker%20Application%20PF">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <atc:getDocs_Input>
+         <atc:ApplicationId>?</atc:ApplicationId>
+      </atc:getDocs_Input>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="document/http://siebel.com/CustomUI:getDocs"/></con:call></con:operation><con:operation isOneWay="false" action="document/http://siebel.com/CustomUI:offerCancelled" name="offerCancelled" bindingOperationName="offerCancelled" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:offerCancelled_Input>
+         <cus:ApplicationId>?</cus:ApplicationId>
+      </cus:offerCancelled_Input>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="document/http://siebel.com/CustomUI:offerCancelled"/></con:call></con:operation><con:operation isOneWay="false" action="document/http://siebel.com/CustomUI:scoreOpty" name="scoreOpty" bindingOperationName="scoreOpty" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://dc2-esbprod03:7180/eai_rus</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:atc="http://www.siebel.com/xml/ATC%20Opportunity%20POS">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:scoreOpty_Input>
+         <atc:ListOfApplicationPos>
+           <atc:ApplicationPos>
+              <atc:AmountCredit>25000</atc:AmountCredit>
+               <atc:Channel>Брокер</atc:Channel>
+               <atc:CurrencyCode>RUR</atc:CurrencyCode>
+               <atc:FirstPayment>0</atc:FirstPayment>
+               <atc:InsuranceForm>Нет</atc:InsuranceForm>
+               <atc:TermCredit>12</atc:TermCredit>
+               <atc:ProductCode>VTB_EXP_1</atc:ProductCode>
+               <atc:TtCode>010700700354010</atc:TtCode>
+               <atc:AgentFirstName>Галина</atc:AgentFirstName> 
+               <atc:AgentLastName>Фёдоров</atc:AgentLastName> 
+              <atc:AgentPassportNumber>305363</atc:AgentPassportNumber>
+               <atc:AgentPassportSeria>4902</atc:AgentPassportSeria>
+               <atc:TtAddress>Балашиха, Ленина, 5</atc:TtAddress>
+               <atc:TtRegionCode>77</atc:TtRegionCode>
+               <atc:BrokerAgentId>fga-1</atc:BrokerAgentId>
+               <atc:BrokerId>Bellwood</atc:BrokerId>
+               <atc:ToCode>010700700354</atc:ToCode>
+               <atc:PathCode>Пост-контроль</atc:PathCode>
+        <!--        <atc:InsuranceCompanyName></atc:InsuranceCompanyName>-->
+               <atc:ListOfContact>
+                  <atc:Contact>
+                   <atc:AddressStatus>Собственное</atc:AddressStatus>
+                     <atc:AnswerSecurityQuestion>Да</atc:AnswerSecurityQuestion>
+                     <atc:BirthDate>10/19/1970</atc:BirthDate>
+                     <atc:BirthPlace>Петрозаводск</atc:BirthPlace>
+                     <atc:ChangeLastNameFlag>0</atc:ChangeLastNameFlag>
+                     <atc:Citizenship>Россия</atc:Citizenship>
+                     <atc:Education>Высшее</atc:Education>
+                     <atc:EmailAddress>fga@mail.ru</atc:EmailAddress>
+                     <atc:Ipdl>0</atc:Ipdl>
+                     <atc:FirstName>Ивана</atc:FirstName>
+                     <atc:LastName>Фёдорова</atc:LastName>
+                     <atc:Gender>Ж</atc:Gender>
+                     <atc:MaritalStatus>Вдова/Вдовец</atc:MaritalStatus>
+                    <atc:MiddleName>Александровна</atc:MiddleName>
+                     <atc:MonthFamilyExpenses>40000</atc:MonthFamilyExpenses>
+                     <atc:MonthFamilyIncome>100000</atc:MonthFamilyIncome>
+                     <atc:MonthPersonalIncome>100000</atc:MonthPersonalIncome>
+                     <atc:NumberChild>Один</atc:NumberChild>
+                     <atc:NumberDepend>Один</atc:NumberDepend>
+                     <atc:SecurityQuestion>нет</atc:SecurityQuestion>
+                     <atc:SocialStatus>Служу/Работаю</atc:SocialStatus>
+                     <atc:VisualAssesCode>0</atc:VisualAssesCode>
+                <!--     <atc:ContactId></atc:ContactId> -->
+                     <atc:ListOfAddress>
+                        <atc:Address>
+                             <atc:Country>Россия</atc:Country>
+                          <atc:Flat>140</atc:Flat>
+                            <atc:House>3</atc:House>
+                           <atc:HouseKLADRCode>103</atc:HouseKLADRCode>
+                            <atc:Housing>2</atc:Housing>
+                           <atc:KladrCode>77000000000259300</atc:KladrCode> 
+                           <atc:KladrFlag>1</atc:KladrFlag>
+                           <atc:LiveDate>10/07/2005</atc:LiveDate> 
+                           <atc:LivingAddressFlag>1</atc:LivingAddressFlag>
+                           <atc:PostAddressFlag>1</atc:PostAddressFlag>
+                           <atc:RegAddressFlag>1</atc:RegAddressFlag>
+                           <atc:RegDate>10/07/2005</atc:RegDate>
+                           <atc:Region>Москва</atc:Region>
+                           <atc:RegionCode>77</atc:RegionCode>
+                            <atc:RegionType>г</atc:RegionType>
+                            <atc:Street>Северный</atc:Street>
+                            <atc:StreetKLADRCode>77000000000259300</atc:StreetKLADRCode> 
+                           <atc:StreetType>б-р</atc:StreetType>
+                           <atc:Zipcode>127566</atc:Zipcode>
+                        </atc:Address>
+                     </atc:ListOfAddress>
+                     <atc:ListOfAsset>
+                        <atc:Asset>
+                           <atc:AssetType>Квартира</atc:AssetType>
+                        </atc:Asset>
+                     </atc:ListOfAsset>
+                     <atc:ListOfPhone>
+                        <atc:Phone>
+                           <atc:PhoneNumber>9262506547</atc:PhoneNumber>
+                           <atc:UseType>Мобильный телефон</atc:UseType>
+                        </atc:Phone>
+                        <atc:Phone>
+                           <atc:PhoneNumber>9262500397</atc:PhoneNumber>
+                           <atc:UseType>Контактный телефон</atc:UseType>
+                        </atc:Phone>
+                     </atc:ListOfPhone>
+                    <atc:ListOfContactEmployment>
+                        <atc:ContactEmployment>
+                          <atc:EmployeeNumber>От 100 до 1000 человек</atc:EmployeeNumber>
+                           <atc:Employer>Лето Банк</atc:Employer>
+                          <atc:FioManager>Гурин Павел Анатольевич</atc:FioManager>
+                           <atc:Industry>J</atc:Industry>
+                           <atc:Position>Служащий\Специалист</atc:Position>
+                           <atc:StartDate>11/01/2012</atc:StartDate>
+                           <atc:WorkPhoneNumber>4956465814</atc:WorkPhoneNumber>
+                           <atc:ListOfWorkAddress>
+                              <atc:WorkAddress>
+                                <atc:Country>Россия</atc:Country>
+                                   <atc:House>8</atc:House>
+                                <atc:KladrCode>77000000000236500</atc:KladrCode>
+                                 <atc:KladrFlag>1</atc:KladrFlag>
+                                 <atc:Region>Москва</atc:Region>
+                                 <atc:RegionCode>77</atc:RegionCode>
+                                 <atc:RegionType>г</atc:RegionType>
+                                 <atc:Street>Преображенская</atc:Street>
+                                 <atc:StreetKLADRCode>77000000000236500</atc:StreetKLADRCode>
+                                 <atc:StreetType>пл</atc:StreetType>
+                                  <atc:Zipcode>107061</atc:Zipcode>
+                              </atc:WorkAddress>
+                           </atc:ListOfWorkAddress>
+                        </atc:ContactEmployment>
+                     </atc:ListOfContactEmployment>
+                   <atc:ListOfContactCredential>
+                        <atc:ContactCredential>
+                           <atc:IssueBy>УВД</atc:IssueBy>
+                           <atc:IssueByCode>532-001</atc:IssueByCode>
+                           <atc:Seria>4902</atc:Seria>
+                           <atc:Category>Паспорт РФ</atc:Category>
+                           <atc:IssueDate>06/25/2002</atc:IssueDate>
+                           <atc:Number>305365</atc:Number>
+                        </atc:ContactCredential>
+                     </atc:ListOfContactCredential>
+                  </atc:Contact>
+               </atc:ListOfContact>
+              <atc:ListOfGoods>
+                  <atc:Goods>
+                      <atc:Group/><atc:Mark>марка 1</atc:Mark>
+                     <atc:Model>модель 1 </atc:Model>
+                     <atc:Name>213</atc:Name>
+                     <atc:Price>1000</atc:Price>
+                     <atc:Quantity>5</atc:Quantity>
+                  </atc:Goods>
+                       <atc:Goods>
+                      <atc:Group/><atc:Mark>марка 2</atc:Mark>
+                     <atc:Model>модель 2 </atc:Model>
+                     <atc:Name>213</atc:Name>
+                     <atc:Price>1000</atc:Price>
+                     <atc:Quantity>6</atc:Quantity>
+                  </atc:Goods>
+                      <atc:Goods>
+                      <atc:Group/><atc:Mark>марка 3</atc:Mark>
+                     <atc:Model>модель 3 </atc:Model>
+                     <atc:Name>213</atc:Name>
+                     <atc:Price>1000</atc:Price>
+                     <atc:Quantity>4</atc:Quantity>
+                  </atc:Goods>
+                      <atc:Goods>
+                      <atc:Group/><atc:Mark>марка 4</atc:Mark>
+                     <atc:Model>модель 4 </atc:Model>
+                     <atc:Name>213</atc:Name>
+                     <atc:Price>1000</atc:Price>
+                     <atc:Quantity>5</atc:Quantity>
+                  </atc:Goods>
+                      <atc:Goods>
+                      <atc:Group/><atc:Mark>марка 5</atc:Mark>
+                     <atc:Model>модель 5 </atc:Model>
+                     <atc:Name>213</atc:Name>
+                     <atc:Price>1000</atc:Price>
+                     <atc:Quantity>5</atc:Quantity>
+                  </atc:Goods>
+            </atc:ListOfGoods>
+               <atc:ListOfOpportunityAttachment>
+                  <atc:OpportunityAttachment>
+                     <atc:OpptyFileName>Фотография 1</atc:OpptyFileName>
+                    <atc:OpptyFileSrcType>png</atc:OpptyFileSrcType>
+                     <atc:OpptyFileBuffer>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</atc:OpptyFileBuffer>
+                    <atc:DocType>Фотография</atc:DocType>
+                  </atc:OpportunityAttachment>
+                  <atc:OpportunityAttachment>
+                     <atc:OpptyFileName>паспорт</atc:OpptyFileName>
+                     <atc:OpptyFileSrcType>png</atc:OpptyFileSrcType>
+                     <atc:OpptyFileBuffer>iVBORw0KGgoAAAANSUhEUgAAAhkAAACuCAIAAAAUKIg4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAgoSURBVHhe7d3rddw2EAZQ16WCVI+qcTMpxiFAEBhwwbWd0XHk5b1/DA4HD0lH+OI4jr79AIAcWQJAliwBIEuWAJAlSwDIkiUAZMkSALJkCQBZsgSALFkCQJYsASBLlgCQJUsAyJIlAGTJEgCyZAkAWbIEgCxZAkCWLAEgS5YAkCVLAMiSJQBkyRIAsmQJAFmyBIAsWQJAliwBIEuWAJAlSwDIkiUAZMkSALJkCQBZsgSALFkCQJYsASBLlgCQJUsAyJIlAGTdLku+v3/79v69PXT/fLzt5fL67eOfVv566kGDxw/lzyufs69xEuD/cqMs2a+84StHxqWSJV/s1t4+r2/v71/uWMCfdJMsqf84X8Oj/76kRku//+I/70+X4pRA482yfytue/QZMayu+ltpM7pDeTpKUd6di1f98eht9Wl6eVjVx+doc7V4tzVvi8wLNIsDbMKK81mOh33FOnzcfXGeee94+PkIYYlt/f5mnGxafSwSi9PJ1puG9tEAr+4eWRK+8cN3/Rier4JwvWyv9qewRr0tYn97qMNj8rm+6A/bluo+8ft7vK7CSapSO1baXfaP1v4xxOlluM6YcK7nhymOtRfvx6LjAGHtac7oDcXSO+aV0fI8Y24RNwg7h6YyTH+ZyujojS0//4zBS7pHloTb4HQxlOH5m77fP5txZaxGu95/enHUL/sXZ5ksisu+w/xyfBhj1Dvq4P2xXoVzDcudSzEs0YbN4gDnpulFXT3svTxGN84zRsU0a9k09/cznMrjbGHF5Xqb5VHPC8Iru3OWHMPyPX/S77utp43HzXC+OPqb0+Vx9F32lxdd33I+Tpy4OW1RXPSHzocPop1ors/a1IvFm/J2Ond/2LS9ir7R4z4PL8Ye43jDvMDe+7hoX+PhIz8Ni/bJ6L8eelt50R0nutx0fhEXhFd22z8vGZVxaTwad1HoOvf3ptOLo37Zf5ylFes41hYHeyhd9cdx33Cv9t+OnOp92b7mLxzmpK3XXj4cYLHIrr8og7ZI3H23Ps+8aOzp+05Nc39vOpXH5NOK+/hi09h7XhBe2U2yZFO+syfj27y8Ou6caLoMwkNdKt4YbXKtx4dYX/SvLqlQK8P+vimzp9JFfyjXh9UJT/WxbJ8cVinD0FKU0rFUFT/OMLU+hI2mOU04wJgZN6h/DhEWLcM2vjj8XA8PZZj9MsX1Nr0cesswtMBru0+WNPFiCPb75VAukbnShfulaZXNfr/0V3Gby/7haO+tbx8f7+ezzldY9dBflx271I72WF6NN3N9LFtWbE9PDhO6ur325ACb+rZbHCAccvS2wuo8cW4/1rxLV5bZ+/tK8WPoxXj+eanWvtz0GFarLx+8rNtlyS/bLotxnTSrWjDfL/yfnnz5fJng88mSK08uoysuqa/jyZfPlwk+nyz5RC6pv4IvE3w+WQJAliwBIEuWAJAlSwDIkiUAZMmSnyj/0U/jv/0BWLtdloS/ofwzLUZECMBP3ChLwv8fo3r2tw6LrV+MAPyKm2RJ/S1GDY/++5IaLUdYLP5N1vb+7eN7r/fk2Vq3cQ+mWB/ZUx7am1iva+79ix278G43llpuvYlTpvV6d1HflMpoKRPrQmUwn/PJMVohLDQ1x5MBd3CPLAn3ZLhJ+3D1s/D2uzHW27TpxaneFn5oGR2t+Pyn74WlNvvFXkYP68YjHROmhzB7LBo+BbV6fj9qVWw/LR8eQtdpPnAD98iScNGd7rzjVjz02vlC3Oad79zqsV4Hix9ZGHaOTusVc6nvcG49XpxXGBPiu9A1ThKKfXg+5/R8uVfoOvcAr+/OWTKG5fYbaq2U+o286c2nm/Jcb8/bLyEAwrrNYsdh3mJeKrQeW/cjNLFtPfkYn2vL00zLX+5VXnTxEwfcwW3/vGRUpvtx3K7zrVnqe/foqLa2UH/2IwvHEhc7dnNpsdTueHFeYUyIw6lrf1iU2uCYVMTDXu8Vu6YZwB3cJEs25Rac9NsuXH1lGMfhTj7K+zrtRbh3p3qZEOphxToMy5XhMT6EKZt5qcutjwmnel9netinTDuH9+F4m/mpTjwey0PbK3bNM4AbuE+WNMt7rhSr+WfhHRfupt2Yrbj6qXzhXt1s7xcX+ui52HEXpzwu9bj1phenrFk4jri/DkvETcv4aKxLTwd83Gszbzf1A6/vdlmSFu/cP+y3tt6ax03fxNpDRAD8Z7Lkd71IlogS4BPJkt/1t2TJc6IE+EyyBIAsWQJAliwBIEuWAJAlSwDIkiUAZMkSALJkCQBZsgSALFkCQJYsASBLlgCQJUsAyJIlAGTJEgCyZAkAWbIEgCxZAkCWLAEgS5YAkCVLAMiSJQBkyRIAsmQJAFmyBIAsWQJAliwBIEuWAJAlSwDIkiUAZMkSALJkCQBZsgSALFkCQJYsASBLlgCQJUsAyJIlAGTJEgCyZAkAWbIEgCxZAkCWLAEgS5YAkCVLAMiSJQBkyRIAsmQJAFmyBIAsWQJAliwBIEuWAJAlSwDIkiUAZMkSALJkCQBZsgSALFkCQJYsASBLlgCQJUsAyJIlAGTJEgCyZAkAWbIEgCxZAkCWLAEgS5YAkCVLAMiSJQBkyRIAsmQJAFmyBIAsWQJAliwBIEuWAJAlSwDIkiUAZMkSALJkCQBZsgSALFkCQJYsASBLlgCQJUsAyJIlAGTJEgCyZAkAWbIEgCxZAkCWLAEgS5YAkCVLAMiSJQBkyRIAsmQJAFmyBIAsWQJAliwBIEuWAJAlSwDIkiUAZMkSALJkCQBZsgSALFkCQM6PH/8C0C9IDEyxqiEAAAAASUVORK5CYII=</atc:OpptyFileBuffer>
+                    <atc:DocType>2-я страница паспорта/разворот</atc:DocType>
+                  </atc:OpportunityAttachment>
+                 <atc:OpportunityAttachment>
+                    <atc:OpptyFileName>регистрация</atc:OpptyFileName>
+                    <atc:OpptyFileSrcType>png</atc:OpptyFileSrcType>
+                    <atc:OpptyFileBuffer>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</atc:OpptyFileBuffer>
+                    <atc:DocType>Страница паспорта с адресом</atc:DocType>
+                  </atc:OpportunityAttachment>
+              </atc:ListOfOpportunityAttachment>
+            </atc:ApplicationPos>
+         </atc:ListOfApplicationPos>
+      </cus:scoreOpty_Input>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="document/http://siebel.com/CustomUI:scoreOpty"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="document/http://siebel.com/CustomUI:scoreOptyWeb" name="scoreOptyWeb" bindingOperationName="scoreOptyWeb" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://172.18.22.213/eai_anon_rus/start.swe?SWEExtSource=AnonWebService&amp;SWEExtCmd=Execute</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cus="http://siebel.com/CustomUI" xmlns:atc="http://www.siebel.com/xml/ATC%20Opportunity%20POS">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cus:scoreOptyWeb_Input>
+         <atc:createApplication>
+            <!--Zero or more repetitions:-->
+            <atc:Application>
+               <atc:Type>?</atc:Type>
+               <!--Optional:-->
+               <atc:ProductCode>?</atc:ProductCode>
+               <!--Optional:-->
+               <atc:Product2Code>?</atc:Product2Code>
+               <!--Optional:-->
+               <atc:TermCredit>?</atc:TermCredit>
+               <!--Optional:-->
+               <atc:AmountCredit>?</atc:AmountCredit>
+               <!--Optional:-->
+               <atc:AnnualPayment>?</atc:AnnualPayment>
+               <atc:FirstPayment>?</atc:FirstPayment>
+               <atc:InsuranceForm>?</atc:InsuranceForm>
+               <!--Optional:-->
+               <atc:InsuranceType>?</atc:InsuranceType>
+               <!--Optional:-->
+               <atc:CardType>?</atc:CardType>
+               <!--Optional:-->
+               <atc:PersonalElectronicSignature>?</atc:PersonalElectronicSignature>
+               <atc:Channel>?</atc:Channel>
+               <atc:PathCode>?</atc:PathCode>
+               <atc:TtCode>?</atc:TtCode>
+               <!--Optional:-->
+               <atc:ToCode>?</atc:ToCode>
+               <!--Optional:-->
+               <atc:TtAddress>?</atc:TtAddress>
+               <!--Optional:-->
+               <atc:TtRegionCode>?</atc:TtRegionCode>
+               <!--Optional:-->
+               <atc:AgentLastName>?</atc:AgentLastName>
+               <!--Optional:-->
+               <atc:AgentFirstName>?</atc:AgentFirstName>
+               <!--Optional:-->
+               <atc:AgentMiddleName>?</atc:AgentMiddleName>
+               <!--Optional:-->
+               <atc:AgentPassportSeria>?</atc:AgentPassportSeria>
+               <!--Optional:-->
+               <atc:AgentPassportNumber>?</atc:AgentPassportNumber>
+               <!--Optional:-->
+               <atc:AgentAgreeName>?</atc:AgentAgreeName>
+               <atc:BrokerId>?</atc:BrokerId>
+               <atc:BrokerAgentId>?</atc:BrokerAgentId>
+               <!--Optional:-->
+               <atc:ApplWebId>?</atc:ApplWebId>
+               <!--Optional:-->
+               <atc:EstablishWay>?</atc:EstablishWay>
+               <!--Optional:-->
+               <atc:WebAddress>?</atc:WebAddress>
+               <!--Optional:-->
+               <atc:AttractionSource>?</atc:AttractionSource>
+               <!--Optional:-->
+               <atc:WebCampContent>?</atc:WebCampContent>
+               <!--Optional:-->
+               <atc:WebCampKeyWord>?</atc:WebCampKeyWord>
+               <!--Optional:-->
+               <atc:WebCampType>?</atc:WebCampType>
+               <!--Optional:-->
+               <atc:AdverisingCampaign>?</atc:AdverisingCampaign>
+               <!--Optional:-->
+               <atc:UserIP>?</atc:UserIP>
+               <!--Optional:-->
+               <atc:PageURL>?</atc:PageURL>
+               <!--Optional:-->
+               <atc:CompLocalTime>?</atc:CompLocalTime>
+               <!--Optional:-->
+               <atc:Device>?</atc:Device>
+               <!--Optional:-->
+               <atc:OperSystem>?</atc:OperSystem>
+               <!--Optional:-->
+               <atc:Browser>?</atc:Browser>
+               <!--Optional:-->
+               <atc:BrowserLang>?</atc:BrowserLang>
+               <!--Optional:-->
+               <atc:ScreenDef>?</atc:ScreenDef>
+               <atc:DeliveryOrgCode>?</atc:DeliveryOrgCode>
+               <atc:DeliveryAddress>?</atc:DeliveryAddress>
+               <!--Optional:-->
+               <atc:ApplicationId>?</atc:ApplicationId>
+               <!--Zero or more repetitions:-->
+               <atc:Contact>
+                  <atc:AddressStatus>?</atc:AddressStatus>
+                  <atc:AnswerSecurityQuestion>?</atc:AnswerSecurityQuestion>
+                  <atc:BirthDate>?</atc:BirthDate>
+                  <atc:BirthPlace>?</atc:BirthPlace>
+                  <atc:ChangeLastNameFlag>?</atc:ChangeLastNameFlag>
+                  <atc:Citizenship>?</atc:Citizenship>
+                  <atc:Education>?</atc:Education>
+                  <!--Optional:-->
+                  <atc:EmailAddress>?</atc:EmailAddress>
+                  <atc:Ipdl>?</atc:Ipdl>
+                  <atc:FirstName>?</atc:FirstName>
+                  <atc:LastName>?</atc:LastName>
+                  <atc:Gender>?</atc:Gender>
+                  <!--Optional:-->
+                  <atc:MaritalStatus>?</atc:MaritalStatus>
+                  <!--Optional:-->
+                  <atc:MiddleName>?</atc:MiddleName>
+                  <atc:MonthFamilyExpenses>?</atc:MonthFamilyExpenses>
+                  <atc:MonthFamilyIncome>?</atc:MonthFamilyIncome>
+                  <atc:MonthPersonalIncome>?</atc:MonthPersonalIncome>
+                  <atc:NumberChild>?</atc:NumberChild>
+                  <atc:NumberDepend>?</atc:NumberDepend>
+                  <!--Optional:-->
+                  <atc:PrevLastName>?</atc:PrevLastName>
+                  <atc:SecurityQuestion>?</atc:SecurityQuestion>
+                  <atc:SocialStatus>?</atc:SocialStatus>
+                  <atc:VisualAssesCode>?</atc:VisualAssesCode>
+                  <!--Optional:-->
+                  <atc:ListOfAddress>
+                     <!--Zero or more repetitions:-->
+                     <atc:Address>
+                        <!--You may enter the following 26 items in any order-->
+                        <atc:KladrFlag>?</atc:KladrFlag>
+                        <atc:Zipcode>?</atc:Zipcode>
+                        <atc:Country>?</atc:Country>
+                        <atc:PostAddressFlag>?</atc:PostAddressFlag>
+                        <atc:LivingAddressFlag>?</atc:LivingAddressFlag>
+                        <atc:RegAddressFlag>?</atc:RegAddressFlag>
+                        <!--Optional:-->
+                        <atc:WorkAddressFlag>?</atc:WorkAddressFlag>
+                        <atc:RegionCode>?</atc:RegionCode>
+                        <!--Optional:-->
+                        <atc:District>?</atc:District>
+                        <!--Optional:-->
+                        <atc:DistrictType>?</atc:DistrictType>
+                        <!--Optional:-->
+                        <atc:City>?</atc:City>
+                        <!--Optional:-->
+                        <atc:CityType>?</atc:CityType>
+                        <!--Optional:-->
+                        <atc:Subcity>?</atc:Subcity>
+                        <!--Optional:-->
+                        <atc:SubcityType>?</atc:SubcityType>
+                        <!--Optional:-->
+                        <atc:Street>?</atc:Street>
+                        <!--Optional:-->
+                        <atc:StreetType>?</atc:StreetType>
+                        <!--Optional:-->
+                        <atc:StreetKLADRCode>?</atc:StreetKLADRCode>
+                        <!--Optional:-->
+                        <atc:House>?</atc:House>
+                        <!--Optional:-->
+                        <atc:HouseKLADRCode>?</atc:HouseKLADRCode>
+                        <!--Optional:-->
+                        <atc:Building>?</atc:Building>
+                        <!--Optional:-->
+                        <atc:Domain>?</atc:Domain>
+                        <!--Optional:-->
+                        <atc:Housing>?</atc:Housing>
+                        <!--Optional:-->
+                        <atc:Flat>?</atc:Flat>
+                        <!--Optional:-->
+                        <atc:KladrCode>?</atc:KladrCode>
+                        <!--Optional:-->
+                        <atc:RegDate>?</atc:RegDate>
+                        <!--Optional:-->
+                        <atc:GniCode>?</atc:GniCode>
+                     </atc:Address>
+                  </atc:ListOfAddress>
+                  <!--Optional:-->
+                  <atc:ListOfAsset>
+                     <!--Zero or more repetitions:-->
+                     <atc:Asset>
+                        <!--You may enter the following 4 items in any order-->
+                        <atc:AssetType>?</atc:AssetType>
+                        <!--Optional:-->
+                        <atc:AutoMark>?</atc:AutoMark>
+                        <!--Optional:-->
+                        <atc:AutoModel>?</atc:AutoModel>
+                        <!--Optional:-->
+                        <atc:AutoIssueDate>?</atc:AutoIssueDate>
+                     </atc:Asset>
+                  </atc:ListOfAsset>
+                  <!--Optional:-->
+                  <atc:ListOfPhone>
+                     <!--Zero or more repetitions:-->
+                     <atc:Phone>
+                        <!--You may enter the following 3 items in any order-->
+                        <atc:UseType>?</atc:UseType>
+                        <atc:PhoneNumber>?</atc:PhoneNumber>
+                        <!--Optional:-->
+                        <atc:AddPhoneNum>?</atc:AddPhoneNum>
+                     </atc:Phone>
+                  </atc:ListOfPhone>
+                  <!--Optional:-->
+                  <atc:ListOfContactEmployment>
+                     <!--Zero or more repetitions:-->
+                     <atc:ContactEmployment>
+                        <!--Optional:-->
+                        <atc:EmployeeNumber>?</atc:EmployeeNumber>
+                        <atc:Employer>?</atc:Employer>
+                        <!--Optional:-->
+                        <atc:FioManager>?</atc:FioManager>
+                        <!--Optional:-->
+                        <atc:Industry>?</atc:Industry>
+                        <!--Optional:-->
+                        <atc:Position>?</atc:Position>
+                        <atc:StartDate>?</atc:StartDate>
+                     </atc:ContactEmployment>
+                  </atc:ListOfContactEmployment>
+                  <!--Optional:-->
+                  <atc:ListOfContactCredential>
+                     <!--1 or more repetitions:-->
+                     <atc:ContactCredential>
+                        <!--You may enter the following 6 items in any order-->
+                        <atc:Seria>?</atc:Seria>
+                        <atc:Number>?</atc:Number>
+                        <!--Optional:-->
+                        <atc:IssueBy>?</atc:IssueBy>
+                        <!--Optional:-->
+                        <atc:IssueDate>?</atc:IssueDate>
+                        <!--Optional:-->
+                        <atc:IssueByCode>?</atc:IssueByCode>
+                        <atc:Category>?</atc:Category>
+                     </atc:ContactCredential>
+                  </atc:ListOfContactCredential>
+               </atc:Contact>
+               <!--Zero or more repetitions:-->
+               <atc:Goods>
+                  <atc:Code>?</atc:Code>
+                  <!--Optional:-->
+                  <atc:Mark>?</atc:Mark>
+                  <!--Optional:-->
+                  <atc:Model>?</atc:Model>
+                  <atc:Quantity>?</atc:Quantity>
+                  <atc:Price>?</atc:Price>
+                  <!--Optional:-->
+                  <atc:OptyId>?</atc:OptyId>
+               </atc:Goods>
+               <!--Zero or more repetitions:-->
+               <atc:ApplicationAttachment>
+                  <atc:OpptyFileName>?</atc:OpptyFileName>
+                  <atc:DocType>?</atc:DocType>
+                  <atc:OpptyFileBuffer>PCFET0NUWVBFIGh0bWw+PGh0bWw+PEhFQUQ+PG1ldGEgY2hhcnNldD0idXRmLTgiPjxUSVRMRT4g0J7RiNC40LHQutCwINC/0YDQuCDQstGL0L/QvtC70L3QtdC90LjQuCDQt9Cw0L/RgNC+0YHQsDwvVElUTEU+PC9IRUFEPjxCT0RZPjxwPtCX0LDRj9Cy0LrQsCDQvdC1INC90LDQudC00LXQvdCwPC9wPjwvQk9EWT48L2h0bWw+</atc:OpptyFileBuffer>
+                  <atc:OpptyFileExt>?</atc:OpptyFileExt>
+                  <!--Optional:-->
+                  <atc:OpptyId>?</atc:OpptyId>
+               </atc:ApplicationAttachment>
+            </atc:Application>
+         </atc:createApplication>
+      </cus:scoreOptyWeb_Input>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="document/http://siebel.com/CustomUI:scoreOptyWeb"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting></con:soapui-project>
